@@ -14,23 +14,26 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
-
   @override
   Widget build(BuildContext _) {
-    final QuestionController questionControllerWatch = Provider.of<QuestionController>(_, listen: false);
+    final QuestionController questionControllerWatch =
+        Provider.of<QuestionController>(_, listen: false);
     // final TimeController timeControllerRead = Provider.of<TimeController>(_, listen: false);
     return Scaffold(
       backgroundColor: Constant.backgroundColor,
-      body: Consumer<QuestionController>(builder:(context, questionController, _) {
+      body: Consumer<QuestionController>(
+          builder: (context, questionController, _) {
         return SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 100,),
+              SizedBox(
+                height: 100,
+              ),
               SizedBox(
                 height: 500,
                 child: ListView.builder(
                   shrinkWrap: false,
-                  padding: EdgeInsets.only(bottom:100),
+                  padding: EdgeInsets.only(bottom: 100),
                   itemCount: questionControllerWatch.questionBundleList.length,
                   itemBuilder: (BuildContext _, int index) {
                     print('in question screen ListView: questionBundleList');
@@ -38,23 +41,30 @@ class _QuestionScreenState extends State<QuestionScreen> {
                     return Column(
                       children: [
                         BundleQuestionWidget(
-                          questionBundleItem: questionControllerWatch
-                              .questionBundleList[index],),
-                        SizedBox(height: 30,),
+                          questionBundleItem:
+                              questionControllerWatch.questionBundleList[index],
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
                       ],
                     );
                   },
                 ),
               ),
-              ElevatedButton(onPressed: () {
-                setState(() {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => BodyAgeResultScreen(),));
-                });
-              },
-                  child: Text(' 제출 ', style: TextStyle(fontSize: 20),)),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => BodyAgeResultScreen(),
+                      ));
+                    });
+                  },
+                  child: Text(
+                    ' 제출 ',
+                    style: TextStyle(fontSize: 20),
+                  )),
             ],
-
           ),
         );
       }),
@@ -63,7 +73,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
 }
 
 class SingleQuestionWidget extends StatelessWidget {
-  SingleQuestionWidget({Key? key, required this.questionItem,}) : super(key: key);
+  SingleQuestionWidget({
+    Key? key,
+    required this.questionItem,
+  }) : super(key: key);
 
   QuestionItem questionItem;
 
@@ -73,8 +86,7 @@ class SingleQuestionWidget extends StatelessWidget {
       children: [
         Checkbox(
           value: questionItem.isChecked,
-          onChanged: (value) {
-          },
+          onChanged: (value) {},
         ),
         Flexible(
           child: RichText(
@@ -82,8 +94,8 @@ class SingleQuestionWidget extends StatelessWidget {
             maxLines: 5,
             // strutStyle: StrutStyle(fontSize: 16.0),
             text: TextSpan(
-                text:questionItem.questionText,style: TextStyle(color: Colors.black, fontSize: 16.0)
-            ),
+                text: questionItem.questionText,
+                style: TextStyle(color: Colors.black, fontSize: 16.0)),
           ),
         )
       ],
@@ -92,7 +104,8 @@ class SingleQuestionWidget extends StatelessWidget {
 }
 
 class BundleQuestionWidget extends StatefulWidget {
-  BundleQuestionWidget({Key? key, required this.questionBundleItem}) : super(key: key);
+  BundleQuestionWidget({Key? key, required this.questionBundleItem})
+      : super(key: key);
 
   final QuestionBundleItem questionBundleItem;
 
@@ -101,7 +114,6 @@ class BundleQuestionWidget extends StatefulWidget {
 }
 
 class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
-
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -125,24 +137,24 @@ class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
           ),
           child: Column(
             children: [
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(widget.questionBundleItem.questionTitle, style: TextStyle(fontSize: 20)),
+                  Text(widget.questionBundleItem.questionTitle,
+                      style: TextStyle(fontSize: 20)),
                 ],
               ),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: widget.questionBundleItem.questionItemList.length,
                 itemBuilder: (BuildContext _, int index) {
-                  return SingleQuestionWidget(questionItem: widget.questionBundleItem.questionItemList[index]);
+                  return SingleQuestionWidget(
+                      questionItem:
+                          widget.questionBundleItem.questionItemList[index]);
                 },
               ),
             ],
-          )
-      ),
+          )),
     );
   }
 }
-

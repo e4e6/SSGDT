@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class HealthSolutionScreen extends StatefulWidget {
@@ -14,18 +12,16 @@ class _HealthSolutionState extends State<HealthSolutionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-            children: [
-
-            ]
-        ),
+        child: Column(children: []),
       ),
     );
   }
 }
 
 class SolutionCard extends StatelessWidget {
-  SolutionCard({Key? key, required this.width,required this.height, required this.text}) : super(key: key);
+  SolutionCard(
+      {Key? key, required this.width, required this.height, required this.text})
+      : super(key: key);
   double width;
   double height;
   String text;
@@ -56,4 +52,3 @@ class SolutionCard extends StatelessWidget {
     );
   }
 }
-

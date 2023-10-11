@@ -5,7 +5,6 @@ import 'package:jindan/models/question_model/question_model.dart';
 class QuestionController with ChangeNotifier{
   final QuestionModel questionModel = QuestionModel();
 
-  //이녀석 처리를 어떻게 할까요
   List<QuestionBundleItem> questionBundleList = [
     QuestionBundleItem(
       questionTitle: '식생활',
@@ -97,15 +96,4 @@ class QuestionController with ChangeNotifier{
       ],
     ),
   ];
-
-
-
-  // 원래같았으면 assets/json/question_data.json 에 있는 파일을 불러오려 했으나  화면에 불러오는 데 실패함
-  // Future<void> loadQuestionBundleList() async {
-  //   questionBundleList = await questionModel.loadQuestionData();
-  //   print('in question_controller  -> _questionBundleList[3]:::');
-  //   print(questionBundleList[3]);
-  //   notifyListeners();
-  // }
-
 }
