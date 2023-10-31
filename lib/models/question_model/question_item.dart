@@ -7,6 +7,6 @@ class QuestionItem with _$QuestionItem {
   factory QuestionItem(
       {@Default(0) double score,
       @Default("질문 내용") String questionText,
-      @Default(false) isChecked,
+      @Default(false) bool isChecked,
       }) = _QuestionItem;
 }

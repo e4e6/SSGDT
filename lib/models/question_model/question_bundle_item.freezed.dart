@@ -17,8 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$QuestionBundleItem {
   String get questionTitle => throw _privateConstructorUsedError;
-  List<QuestionItem> get questionItemList => throw _privateConstructorUsedError;
+  List<QuestionItem> get questionList => throw _privateConstructorUsedError;
   bool get isMultipleSelectionsAllowed => throw _privateConstructorUsedError;
+  double get initialScore => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestionBundleItemCopyWith<QuestionBundleItem> get copyWith =>
@@ -34,7 +35,8 @@ abstract class $QuestionBundleItemCopyWith<$Res> {
   $Res call(
       {String questionTitle,
       List<QuestionItem> questionList,
-      bool isMultipleSelectionsAllowed});
+      bool isMultipleSelectionsAllowed,
+      double initialScore});
 }
 
 /// @nodoc
@@ -53,6 +55,7 @@ class _$QuestionBundleItemCopyWithImpl<$Res, $Val extends QuestionBundleItem>
     Object? questionTitle = null,
     Object? questionList = null,
     Object? isMultipleSelectionsAllowed = null,
+    Object? initialScore = null,
   }) {
     return _then(_value.copyWith(
       questionTitle: null == questionTitle
@@ -60,13 +63,17 @@ class _$QuestionBundleItemCopyWithImpl<$Res, $Val extends QuestionBundleItem>
           : questionTitle // ignore: cast_nullable_to_non_nullable
               as String,
       questionList: null == questionList
-          ? _value.questionItemList
+          ? _value.questionList
           : questionList // ignore: cast_nullable_to_non_nullable
               as List<QuestionItem>,
       isMultipleSelectionsAllowed: null == isMultipleSelectionsAllowed
           ? _value.isMultipleSelectionsAllowed
           : isMultipleSelectionsAllowed // ignore: cast_nullable_to_non_nullable
               as bool,
+      initialScore: null == initialScore
+          ? _value.initialScore
+          : initialScore // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -82,7 +89,8 @@ abstract class _$$_QuestionBundleItemCopyWith<$Res>
   $Res call(
       {String questionTitle,
       List<QuestionItem> questionList,
-      bool isMultipleSelectionsAllowed});
+      bool isMultipleSelectionsAllowed,
+      double initialScore});
 }
 
 /// @nodoc
@@ -99,6 +107,7 @@ class __$$_QuestionBundleItemCopyWithImpl<$Res>
     Object? questionTitle = null,
     Object? questionList = null,
     Object? isMultipleSelectionsAllowed = null,
+    Object? initialScore = null,
   }) {
     return _then(_$_QuestionBundleItem(
       questionTitle: null == questionTitle
@@ -113,6 +122,10 @@ class __$$_QuestionBundleItemCopyWithImpl<$Res>
           ? _value.isMultipleSelectionsAllowed
           : isMultipleSelectionsAllowed // ignore: cast_nullable_to_non_nullable
               as bool,
+      initialScore: null == initialScore
+          ? _value.initialScore
+          : initialScore // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -123,7 +136,8 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
   _$_QuestionBundleItem(
       {this.questionTitle = "[item:]제목 추가 필요",
       required final List<QuestionItem> questionList,
-      this.isMultipleSelectionsAllowed = false})
+      this.isMultipleSelectionsAllowed = false,
+      this.initialScore = 0.0})
       : _questionList = questionList;
 
   @override
@@ -131,7 +145,7 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
   final String questionTitle;
   final List<QuestionItem> _questionList;
   @override
-  List<QuestionItem> get questionItemList {
+  List<QuestionItem> get questionList {
     if (_questionList is EqualUnmodifiableListView) return _questionList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_questionList);
@@ -140,10 +154,13 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
   @override
   @JsonKey()
   final bool isMultipleSelectionsAllowed;
+  @override
+  @JsonKey()
+  final double initialScore;
 
   @override
   String toString() {
-    return 'QuestionBundleItem(questionTitle: $questionTitle, questionList: $questionItemList, isMultipleSelectionsAllowed: $isMultipleSelectionsAllowed)';
+    return 'QuestionBundleItem(questionTitle: $questionTitle, questionList: $questionList, isMultipleSelectionsAllowed: $isMultipleSelectionsAllowed, initialScore: $initialScore)';
   }
 
   @override
@@ -158,7 +175,9 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
             (identical(other.isMultipleSelectionsAllowed,
                     isMultipleSelectionsAllowed) ||
                 other.isMultipleSelectionsAllowed ==
-                    isMultipleSelectionsAllowed));
+                    isMultipleSelectionsAllowed) &&
+            (identical(other.initialScore, initialScore) ||
+                other.initialScore == initialScore));
   }
 
   @override
@@ -166,7 +185,8 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
       runtimeType,
       questionTitle,
       const DeepCollectionEquality().hash(_questionList),
-      isMultipleSelectionsAllowed);
+      isMultipleSelectionsAllowed,
+      initialScore);
 
   @JsonKey(ignore: true)
   @override
@@ -180,14 +200,17 @@ abstract class _QuestionBundleItem implements QuestionBundleItem {
   factory _QuestionBundleItem(
       {final String questionTitle,
       required final List<QuestionItem> questionList,
-      final bool isMultipleSelectionsAllowed}) = _$_QuestionBundleItem;
+      final bool isMultipleSelectionsAllowed,
+      final double initialScore}) = _$_QuestionBundleItem;
 
   @override
   String get questionTitle;
   @override
-  List<QuestionItem> get questionItemList;
+  List<QuestionItem> get questionList;
   @override
   bool get isMultipleSelectionsAllowed;
+  @override
+  double get initialScore;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionBundleItemCopyWith<_$_QuestionBundleItem> get copyWith =>

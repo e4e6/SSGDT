@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jindan/screens/question_screen.dart';
+import 'package:jindan/screens/question_screens/question_screen.dart';
 
 class BodyAgeTestStartScreen extends StatefulWidget {
   const BodyAgeTestStartScreen({Key? key}) : super(key: key);

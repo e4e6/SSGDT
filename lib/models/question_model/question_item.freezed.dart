@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$QuestionItem {
   double get score => throw _privateConstructorUsedError;
   String get questionText => throw _privateConstructorUsedError;
-  dynamic get isChecked => throw _privateConstructorUsedError;
+  bool get isChecked => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestionItemCopyWith<QuestionItem> get copyWith =>
@@ -31,7 +31,7 @@ abstract class $QuestionItemCopyWith<$Res> {
           QuestionItem value, $Res Function(QuestionItem) then) =
       _$QuestionItemCopyWithImpl<$Res, QuestionItem>;
   @useResult
-  $Res call({double score, String questionText, dynamic isChecked});
+  $Res call({double score, String questionText, bool isChecked});
 }
 
 /// @nodoc
@@ -49,7 +49,7 @@ class _$QuestionItemCopyWithImpl<$Res, $Val extends QuestionItem>
   $Res call({
     Object? score = null,
     Object? questionText = null,
-    Object? isChecked = freezed,
+    Object? isChecked = null,
   }) {
     return _then(_value.copyWith(
       score: null == score
@@ -60,10 +60,10 @@ class _$QuestionItemCopyWithImpl<$Res, $Val extends QuestionItem>
           ? _value.questionText
           : questionText // ignore: cast_nullable_to_non_nullable
               as String,
-      isChecked: freezed == isChecked
+      isChecked: null == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as bool,
     ) as $Val);
   }
 }
@@ -76,7 +76,7 @@ abstract class _$$_QuestionItemCopyWith<$Res>
       __$$_QuestionItemCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double score, String questionText, dynamic isChecked});
+  $Res call({double score, String questionText, bool isChecked});
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ class __$$_QuestionItemCopyWithImpl<$Res>
   $Res call({
     Object? score = null,
     Object? questionText = null,
-    Object? isChecked = freezed,
+    Object? isChecked = null,
   }) {
     return _then(_$_QuestionItem(
       score: null == score
@@ -103,7 +103,10 @@ class __$$_QuestionItemCopyWithImpl<$Res>
           ? _value.questionText
           : questionText // ignore: cast_nullable_to_non_nullable
               as String,
-      isChecked: freezed == isChecked ? _value.isChecked! : isChecked,
+      isChecked: null == isChecked
+          ? _value.isChecked
+          : isChecked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -122,7 +125,7 @@ class _$_QuestionItem implements _QuestionItem {
   final String questionText;
   @override
   @JsonKey()
-  final dynamic isChecked;
+  final bool isChecked;
 
   @override
   String toString() {
@@ -137,12 +140,12 @@ class _$_QuestionItem implements _QuestionItem {
             (identical(other.score, score) || other.score == score) &&
             (identical(other.questionText, questionText) ||
                 other.questionText == questionText) &&
-            const DeepCollectionEquality().equals(other.isChecked, isChecked));
+            (identical(other.isChecked, isChecked) ||
+                other.isChecked == isChecked));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, score, questionText,
-      const DeepCollectionEquality().hash(isChecked));
+  int get hashCode => Object.hash(runtimeType, score, questionText, isChecked);
 
   @JsonKey(ignore: true)
   @override
@@ -155,14 +158,14 @@ abstract class _QuestionItem implements QuestionItem {
   factory _QuestionItem(
       {final double score,
       final String questionText,
-      final dynamic isChecked}) = _$_QuestionItem;
+      final bool isChecked}) = _$_QuestionItem;
 
   @override
   double get score;
   @override
   String get questionText;
   @override
-  dynamic get isChecked;
+  bool get isChecked;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionItemCopyWith<_$_QuestionItem> get copyWith =>

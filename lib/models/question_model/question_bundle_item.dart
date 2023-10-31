@@ -9,5 +9,6 @@ class QuestionBundleItem with _$QuestionBundleItem {
       {@Default("[item:]제목 추가 필요") String questionTitle,
         required List<QuestionItem> questionList,
         @Default(false) bool isMultipleSelectionsAllowed,
+        @Default(0.0) double initialScore,
       }) = _QuestionBundleItem;
 }
