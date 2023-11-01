@@ -5,10 +5,8 @@ import 'package:jindan/screens/question_screens/widgets/single_question_widget.d
 import 'package:provider/provider.dart';
 
 class BundleQuestionWidget extends StatefulWidget {
-  BundleQuestionWidget({Key? key,required this.questionBundleIndex})
+  BundleQuestionWidget({Key? key,})
       : super(key: key);
-
-  int questionBundleIndex;
 
   @override
   State<BundleQuestionWidget> createState() => _BundleQuestionWidgetState();
@@ -20,7 +18,7 @@ class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
     QuestionController questionControllerWatch =
     Provider.of<QuestionController>(context, listen: true);
 
-    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[widget.questionBundleIndex];
+    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleIndex];
 
     return AnimatedContainer(
       duration: Duration(milliseconds: 300),
@@ -55,7 +53,6 @@ class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
                 itemCount: questionBundleItem.questionList.length,
                 itemBuilder: (BuildContext _, int questionIndex) {
                   return SingleQuestionWidget(
-                    questionBundleIndex: widget.questionBundleIndex,
                     questionIndex: questionIndex,
                   );
                 },

@@ -7,11 +7,9 @@ import 'package:provider/provider.dart';
 class SingleQuestionWidget extends StatelessWidget {
   SingleQuestionWidget({
     Key? key,
-    required this.questionBundleIndex,
     required this. questionIndex,
   }) : super(key: key);
 
-  int questionBundleIndex;
   int questionIndex;
 
   @override
@@ -19,7 +17,7 @@ class SingleQuestionWidget extends StatelessWidget {
     QuestionController questionControllerWatch =
     Provider.of<QuestionController>(context, listen: true);
 
-    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionBundleIndex];
+    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleIndex];
     QuestionItem questionItem = questionBundleItem.questionList[questionIndex];
 
     return Row(
@@ -28,7 +26,7 @@ class SingleQuestionWidget extends StatelessWidget {
           value: questionItem.isChecked,
 
           onChanged: (value){
-            questionControllerWatch.changeQuestionCheckboxValue(questionBundleIndex: questionBundleIndex, questionIndex: questionIndex);
+            questionControllerWatch.changeQuestionCheckboxValue(questionBundleIndex: questionControllerWatch.questionBundleIndex, questionIndex: questionIndex);
             print('클릭됨: ${questionIndex}');
           }
         ),

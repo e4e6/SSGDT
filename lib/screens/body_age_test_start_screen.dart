@@ -43,21 +43,26 @@ class RoundedShadowContainer extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20), // 둥글게 만들기 위한 BorderRadius 설정
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5), // 그림자 색상 설정
-            spreadRadius: 5, // 그림자 확산 범위
-            blurRadius: 7, // 그림자 흐릿함 정도
-            offset: Offset(0, 3), // 그림자 위치 (x, y)
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3),
           ),
         ],
-        color: Colors.white, // 컨테이너의 배경색 설정
+        color: Colors.white,
       ),
       child: Center(
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/image/start_screen_image.png',
+              width: 280,
+            ),
+          ],
         ),
       ),
     );

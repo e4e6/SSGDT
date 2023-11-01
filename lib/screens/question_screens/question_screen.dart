@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jindan/config/constant.dart';
 import 'package:jindan/controller/question_controller.dart';
 import 'package:jindan/screens/body_age_result_screen.dart';
+import 'package:jindan/screens/question_screens/widgets/bundle_question_image_widget.dart';
 import 'package:jindan/screens/question_screens/widgets/bundle_question_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -15,18 +16,57 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   @override
   Widget build(BuildContext _) {
+
     QuestionController questionControllerWatch =
         Provider.of<QuestionController>(_, listen: true);
-    int questionBundleIndex;
-
     return Scaffold(
       backgroundColor: Constant.backgroundColor,
       body: Column(
         children: [
           SizedBox(
-            height: 50,
+            height: 40,
           ),
-          BundleQuestionWidget(questionBundleIndex: 0),
+
+          BundleQuestionImageWidget(),
+
+          SizedBox(
+            height: 20,
+          ),
+
+          BundleQuestionWidget(),
+
+          const Expanded(
+            child: Center(child: null),
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    questionControllerWatch.changeToPreviousQuestionBundle();
+                  },
+                  child: Text(
+                    ' 이전 ',
+                    style: TextStyle(fontSize: 20),
+                  )
+              ),
+              SizedBox(width: 80,),
+              ElevatedButton(
+                  onPressed: () {
+                    questionControllerWatch.changeToNextQuestionBundle();
+                  },
+                  child: Text(
+                    questionControllerWatch.questionBundleIndex == questionControllerWatch.questionBundleList.length-1
+                      ? ' 제출 '
+                      : ' 다음 '
+                    ,
+                    style: TextStyle(fontSize: 20),
+                  )
+              ),
+            ],
+          ),
+          const Padding(padding: EdgeInsets.only(bottom: 40),),
         ],
       ),
     );

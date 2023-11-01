@@ -1,3 +1,5 @@
+// 미완성 상태라 임시로 표시할 데이터 넣어둠
+
 import 'package:flutter/material.dart';
 
 class BodyAgeResultScreen extends StatefulWidget {

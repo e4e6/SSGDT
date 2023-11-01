@@ -5,9 +5,12 @@ import 'package:jindan/models/question_model/question_model.dart';
 class QuestionController with ChangeNotifier{
   final QuestionModel questionModel = QuestionModel();
 
+  int questionBundleIndex = 0;
+
   List<QuestionBundleItem> questionBundleList = [
     QuestionBundleItem(
       questionTitle: '식생활',
+      imagePath: 'assets/image/diet.png',
       questionList: [
         QuestionItem(
           questionText:
@@ -34,6 +37,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '운동',
+      imagePath: 'assets/image/exercise.png',
       questionList: [
         QuestionItem(
           questionText: '일주일에 3회 이상, 한 번에 30분 이상 운동한다.',
@@ -51,6 +55,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '흡연',
+      imagePath: 'assets/image/smoking.png',
       questionList: [
         QuestionItem(
           questionText: '전혀 피운 적이 없거나 10년 전에 끊었다.',
@@ -76,6 +81,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '음주',
+      imagePath: 'assets/image/alcohol_consumption.png',
       questionList: [
         QuestionItem(
           questionText: '전혀 마시지 않는다.',
@@ -101,6 +107,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '스트레스',
+      imagePath: 'assets/image/stress.png',
       questionList: [
         QuestionItem(
           questionText:
@@ -131,6 +138,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '연간 여행거리 / 위험한 직업',
+      imagePath: 'assets/image/annual_travel_distance_risky_jobs.png',
       questionList: [
         QuestionItem(
           questionText:
@@ -151,6 +159,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '운전 및 안전습관',
+      imagePath: 'assets/image/driving_safety_habits.png',
       questionList: [
         QuestionItem(
           questionText:
@@ -171,6 +180,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '건강검진',
+      imagePath: 'assets/image/health_checkup.png',
       questionList: [
         QuestionItem(
           questionText: '2 년에 1회 이상 건강검진을 받는다.',
@@ -188,6 +198,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: 'B형 간염 혹은 바이러스 보유자',
+      imagePath: 'assets/image/hepatitis_b_virus_carrier.png',
       questionList: [
         QuestionItem(
           questionText: '그렇다.',
@@ -205,6 +216,7 @@ class QuestionController with ChangeNotifier{
     ),
     QuestionBundleItem(
       questionTitle: '비만도',
+      imagePath: 'assets/image/obesity.png',
       questionList: [
         QuestionItem(
           questionText: '표준체중(이상 체중의 90~110%).',
@@ -237,6 +249,19 @@ class QuestionController with ChangeNotifier{
          ..[questionIndex] = newQuestion,
     );
     questionBundleList[questionBundleIndex] = newQuestionBundle;
+    notifyListeners();
+  }
+
+  void changeToNextQuestionBundle() {
+    questionBundleIndex < questionBundleList.length-1
+        ? questionBundleIndex ++
+        : questionBundleIndex = questionBundleList.length-1;
+    notifyListeners();
+  }
+  void changeToPreviousQuestionBundle() {
+    questionBundleIndex >0
+        ? questionBundleIndex --
+        : questionBundleIndex = 0;
     notifyListeners();
   }
 }

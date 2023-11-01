@@ -115,7 +115,9 @@ class __$$_QuestionItemCopyWithImpl<$Res>
 
 class _$_QuestionItem implements _QuestionItem {
   _$_QuestionItem(
-      {this.score = 0, this.questionText = "질문 내용", this.isChecked = false});
+      {this.score = 0,
+      this.questionText = "[item:]질문 내용 추가 필요",
+      this.isChecked = false});
 
   @override
   @JsonKey()

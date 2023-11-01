@@ -6,7 +6,7 @@ part 'question_item.freezed.dart';
 class QuestionItem with _$QuestionItem {
   factory QuestionItem(
       {@Default(0) double score,
-      @Default("질문 내용") String questionText,
+      @Default("[item:]질문 내용 추가 필요") String questionText,
       @Default(false) bool isChecked,
       }) = _QuestionItem;
 }

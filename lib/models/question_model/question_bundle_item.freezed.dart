@@ -20,6 +20,7 @@ mixin _$QuestionBundleItem {
   List<QuestionItem> get questionList => throw _privateConstructorUsedError;
   bool get isMultipleSelectionsAllowed => throw _privateConstructorUsedError;
   double get initialScore => throw _privateConstructorUsedError;
+  String get imagePath => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestionBundleItemCopyWith<QuestionBundleItem> get copyWith =>
@@ -36,7 +37,8 @@ abstract class $QuestionBundleItemCopyWith<$Res> {
       {String questionTitle,
       List<QuestionItem> questionList,
       bool isMultipleSelectionsAllowed,
-      double initialScore});
+      double initialScore,
+      String imagePath});
 }
 
 /// @nodoc
@@ -56,6 +58,7 @@ class _$QuestionBundleItemCopyWithImpl<$Res, $Val extends QuestionBundleItem>
     Object? questionList = null,
     Object? isMultipleSelectionsAllowed = null,
     Object? initialScore = null,
+    Object? imagePath = null,
   }) {
     return _then(_value.copyWith(
       questionTitle: null == questionTitle
@@ -74,6 +77,10 @@ class _$QuestionBundleItemCopyWithImpl<$Res, $Val extends QuestionBundleItem>
           ? _value.initialScore
           : initialScore // ignore: cast_nullable_to_non_nullable
               as double,
+      imagePath: null == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -90,7 +97,8 @@ abstract class _$$_QuestionBundleItemCopyWith<$Res>
       {String questionTitle,
       List<QuestionItem> questionList,
       bool isMultipleSelectionsAllowed,
-      double initialScore});
+      double initialScore,
+      String imagePath});
 }
 
 /// @nodoc
@@ -108,6 +116,7 @@ class __$$_QuestionBundleItemCopyWithImpl<$Res>
     Object? questionList = null,
     Object? isMultipleSelectionsAllowed = null,
     Object? initialScore = null,
+    Object? imagePath = null,
   }) {
     return _then(_$_QuestionBundleItem(
       questionTitle: null == questionTitle
@@ -126,6 +135,10 @@ class __$$_QuestionBundleItemCopyWithImpl<$Res>
           ? _value.initialScore
           : initialScore // ignore: cast_nullable_to_non_nullable
               as double,
+      imagePath: null == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -137,7 +150,8 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
       {this.questionTitle = "[item:]제목 추가 필요",
       required final List<QuestionItem> questionList,
       this.isMultipleSelectionsAllowed = false,
-      this.initialScore = 0.0})
+      this.initialScore = 0.0,
+      this.imagePath = "[item:]이미지 주소 추가 필요"})
       : _questionList = questionList;
 
   @override
@@ -157,10 +171,13 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
   @override
   @JsonKey()
   final double initialScore;
+  @override
+  @JsonKey()
+  final String imagePath;
 
   @override
   String toString() {
-    return 'QuestionBundleItem(questionTitle: $questionTitle, questionList: $questionList, isMultipleSelectionsAllowed: $isMultipleSelectionsAllowed, initialScore: $initialScore)';
+    return 'QuestionBundleItem(questionTitle: $questionTitle, questionList: $questionList, isMultipleSelectionsAllowed: $isMultipleSelectionsAllowed, initialScore: $initialScore, imagePath: $imagePath)';
   }
 
   @override
@@ -177,7 +194,9 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
                 other.isMultipleSelectionsAllowed ==
                     isMultipleSelectionsAllowed) &&
             (identical(other.initialScore, initialScore) ||
-                other.initialScore == initialScore));
+                other.initialScore == initialScore) &&
+            (identical(other.imagePath, imagePath) ||
+                other.imagePath == imagePath));
   }
 
   @override
@@ -186,7 +205,8 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
       questionTitle,
       const DeepCollectionEquality().hash(_questionList),
       isMultipleSelectionsAllowed,
-      initialScore);
+      initialScore,
+      imagePath);
 
   @JsonKey(ignore: true)
   @override
@@ -201,7 +221,8 @@ abstract class _QuestionBundleItem implements QuestionBundleItem {
       {final String questionTitle,
       required final List<QuestionItem> questionList,
       final bool isMultipleSelectionsAllowed,
-      final double initialScore}) = _$_QuestionBundleItem;
+      final double initialScore,
+      final String imagePath}) = _$_QuestionBundleItem;
 
   @override
   String get questionTitle;
@@ -211,6 +232,8 @@ abstract class _QuestionBundleItem implements QuestionBundleItem {
   bool get isMultipleSelectionsAllowed;
   @override
   double get initialScore;
+  @override
+  String get imagePath;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionBundleItemCopyWith<_$_QuestionBundleItem> get copyWith =>
