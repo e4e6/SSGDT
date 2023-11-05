@@ -1,6 +1,10 @@
 // 미완성 상태라 임시로 표시할 데이터 넣어둠
 
 import 'package:flutter/material.dart';
+import 'package:jindan/controller/health_result_controller.dart';
+import 'package:jindan/controller/question_controller.dart';
+import 'package:provider/provider.dart';
+
 
 class BodyAgeResultScreen extends StatefulWidget {
   const BodyAgeResultScreen({Key? key}) : super(key: key);
@@ -12,21 +16,27 @@ class BodyAgeResultScreen extends StatefulWidget {
 class _BodyAgeResultScreenState extends State<BodyAgeResultScreen> {
   var backgroundColor = Colors.grey[200];
   double mainWidth = 300.0;
-  double imageContainerHeight = 400.0;
+  double imageContainerHeight = 200.0;
   double sizedBoxHeightHigh = 100.0;
   double sizedBoxHeightLow = 20;
 
   @override
   Widget build(BuildContext context) {
+    var helthResultController = HelthResultController();
+    QuestionController questionControllerWatch =
+    Provider.of<QuestionController>(context, listen: true);
+
     return Scaffold(
       backgroundColor: backgroundColor,
       body: Center(
         child: Column(
           children: [
             SizedBox(height: sizedBoxHeightHigh,),
-            RoundedShadowContainer(width: mainWidth, height: imageContainerHeight, text: 'image about body age'),
+            RoundedShadowContainer(width: 300, height: imageContainerHeight, text: 'image about body age'),
             SizedBox(height: sizedBoxHeightLow,),
-            BigText(age: 40, explanation: "40대에게 가장 중요한 것은 건강이므로 꾸준한 운동을 통해 건강한 미래를 향해 나아가세요."),
+            BigText(age: helthResultController.getScore(
+                questionBundleList:questionControllerWatch.questionBundleList),
+                explanation: '설명을 추가하자'),
         ],),
       )
     );
@@ -68,7 +78,7 @@ class RoundedShadowContainer extends StatelessWidget {
 
 class BigText extends StatelessWidget {
   BigText({Key? key, required this.age, required this.explanation}) : super(key: key);
-  int age;
+  double age;
   String explanation;
 
   @override
@@ -80,9 +90,9 @@ class BigText extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             maxLines: 5,
             text: TextSpan(
-              text:'당신의 건강 나이는${age}살 입니다',
+              text: age >= 0 ? '+${age}년' : '${age}년' ,
               style: TextStyle(
-                fontSize: 23, // 텍스트 크기
+                fontSize: 80, // 텍스트 크기
                 fontWeight: FontWeight.bold, // 텍스트 굵기
                 color: Colors.black, // 텍스트 색상
                 letterSpacing: 1.2, // 글자 간격 조정

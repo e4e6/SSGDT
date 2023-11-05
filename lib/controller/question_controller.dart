@@ -11,6 +11,8 @@ class QuestionController with ChangeNotifier{
     QuestionBundleItem(
       questionTitle: '식생활',
       imagePath: 'assets/image/diet.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
       questionList: [
         QuestionItem(
           questionText:
@@ -92,22 +94,24 @@ class QuestionController with ChangeNotifier{
           score: -1.0,
         ),
         QuestionItem(
-          questionText: '일주일에 1~3회이고 한 번에 소주 2홉 1병 이상.',
+          questionText: '일주일에 1번 소주 한 병 정도 마신다.',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '일주일에 2~3회이고 한 번에 소주 2홉 1병 이상.',
           score: 2.0,
         ),
         QuestionItem(
           questionText: '일주일에 4회 이상, 한 번에 소주 2홉 1병 이상.',
           score: 4.0,
         ),
-        QuestionItem(
-          questionText: '2번과 3번 사이',
-          score: 1.0,
-        ),
       ],
     ),
     QuestionBundleItem(
       questionTitle: '스트레스',
       imagePath: 'assets/image/stress.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: -2,
       questionList: [
         QuestionItem(
           questionText:
@@ -183,16 +187,16 @@ class QuestionController with ChangeNotifier{
       imagePath: 'assets/image/health_checkup.png',
       questionList: [
         QuestionItem(
+          questionText: '5년에 1회 이상 건강검진을 받는다.',
+          score: 0.0,
+        ),
+        QuestionItem(
           questionText: '2 년에 1회 이상 건강검진을 받는다.',
           score: -2.0,
         ),
         QuestionItem(
           questionText: '전혀 건강검진을 받지 않는다.',
           score: 2.0,
-        ),
-        QuestionItem(
-          questionText: '2 년에 1회 이하로 건강검진을 받는다.',
-          score: 0.0,
         ),
       ],
     ),
@@ -238,6 +242,25 @@ class QuestionController with ChangeNotifier{
     ),
   ];
 
+  void changeAllQuestionCheckboxValueToFalse({required int questionBundleIndex, required int questionIndex}) {
+    final questionBundle = questionBundleList[questionBundleIndex];
+    final question = questionBundle.questionList[questionIndex];
+
+    // Toggle the checked state of the clicked checkbox
+    final newQuestion = question.copyWith(isChecked: !question.isChecked);
+
+    // Create a new list of questions with all checkboxes unchecked except the clicked one
+    final updatedQuestionList = List<QuestionItem>.from(questionBundle.questionList).map((item) {
+      return item.copyWith(isChecked: false);
+    }).toList();
+
+
+    // Update the question bundle with the updated question list
+    final newQuestionBundle = questionBundle.copyWith(questionList: updatedQuestionList);
+    questionBundleList[questionBundleIndex] = newQuestionBundle;
+
+    notifyListeners();
+  }
   void changeQuestionCheckboxValue({required int questionBundleIndex, required int questionIndex}) {
     final questionBundle = questionBundleList[questionBundleIndex];
     final question = questionBundle.questionList[questionIndex];
@@ -246,10 +269,16 @@ class QuestionController with ChangeNotifier{
 
     final newQuestionBundle = questionBundle.copyWith(
       questionList: List<QuestionItem>.from(questionBundle.questionList)
-         ..[questionIndex] = newQuestion,
+        ..[questionIndex] = newQuestion,
     );
     questionBundleList[questionBundleIndex] = newQuestionBundle;
     notifyListeners();
+  }
+  void CheckboxHandler(int questionBundleIndex, int questionIndex) {
+    if (questionBundleList[questionBundleIndex].isMultipleSelectionsAllowed == false) {
+      changeAllQuestionCheckboxValueToFalse(questionBundleIndex: questionBundleIndex, questionIndex: questionIndex);
+    }
+    changeQuestionCheckboxValue(questionBundleIndex: questionBundleIndex, questionIndex: questionIndex);
   }
 
   void changeToNextQuestionBundle() {

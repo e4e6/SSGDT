@@ -24,11 +24,10 @@ class SingleQuestionWidget extends StatelessWidget {
       children: [
         Checkbox(
           value: questionItem.isChecked,
+        onChanged: (value) {
+          questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleIndex, questionIndex);
+        }
 
-          onChanged: (value){
-            questionControllerWatch.changeQuestionCheckboxValue(questionBundleIndex: questionControllerWatch.questionBundleIndex, questionIndex: questionIndex);
-            print('클릭됨: ${questionIndex}');
-          }
         ),
         Flexible(
           child: RichText(

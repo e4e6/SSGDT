@@ -54,6 +54,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
               SizedBox(width: 80,),
               ElevatedButton(
                   onPressed: () {
+                    if(questionControllerWatch.questionBundleIndex == questionControllerWatch.questionBundleList.length-1)
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => BodyAgeResultScreen(),)
+                      );
                     questionControllerWatch.changeToNextQuestionBundle();
                   },
                   child: Text(

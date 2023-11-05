@@ -79,7 +79,8 @@ class RoundedShadowButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => QuestionScreen(),));
+            builder: (context) => QuestionScreen(),)
+        );
       },
       style: ElevatedButton.styleFrom(
         fixedSize: Size(width, height),

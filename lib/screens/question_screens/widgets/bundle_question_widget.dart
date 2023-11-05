@@ -46,6 +46,9 @@ class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
                 children: [
                   Text(questionBundleItem.questionTitle,
                       style: TextStyle(fontSize: 20)),
+                  Text(questionBundleItem.isMultipleSelectionsAllowed == true
+                      ? '(복수선택)' : '',
+                      style: TextStyle(fontSize: 20)),
                 ],
               ),
               ListView.builder(
