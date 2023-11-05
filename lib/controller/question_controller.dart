@@ -35,6 +35,11 @@ class QuestionController with ChangeNotifier{
           questionText: '간식을 먹지 않는다.',
           score: -2.0,
         ),
+        QuestionItem(
+          questionText:
+          '해당 사항 없음',
+          score: 0,
+        ),
       ],
     ),
     QuestionBundleItem(
@@ -90,7 +95,7 @@ class QuestionController with ChangeNotifier{
           score: 0.0,
         ),
         QuestionItem(
-          questionText: '횟수와 관계없이 소주 2홉 반 병 이하로 마신다.',
+          questionText: '횟수와 관계없이 소주 반 병 이하로 마신다.',
           score: -1.0,
         ),
         QuestionItem(
@@ -98,11 +103,11 @@ class QuestionController with ChangeNotifier{
           score: 1.0,
         ),
         QuestionItem(
-          questionText: '일주일에 2~3회이고 한 번에 소주 2홉 1병 이상.',
+          questionText: '일주일에 2~3회이고 한 번에 소주 1병 이상.',
           score: 2.0,
         ),
         QuestionItem(
-          questionText: '일주일에 4회 이상, 한 번에 소주 2홉 1병 이상.',
+          questionText: '일주일에 4회 이상, 한 번에 소주 1병 이상.',
           score: 4.0,
         ),
       ],
@@ -115,27 +120,27 @@ class QuestionController with ChangeNotifier{
       questionList: [
         QuestionItem(
           questionText:
-          '지난 한달간 정신적으로나 육체적으로 감당하기 어려운 어려움을 느낀 적이 있습니까?',
+          '지난 한 달간 정신적으로 감당하기 힘든 스트레스를 겪음',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한달간 자신의 생활신념에 따라 살아가려고 애쓰다가 좌절을 느낀 적이 있습니까?',
+          '지난 한 달간 자신의 신념에 따라 살아가는데 어려움을 느낌',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한달간 처한 환경이 인간답게 살아가는데 부족하다고 느낀 적이 있습니까?',
+          '지난 한 달간 자신이 처한 환경이 인간답게 살아가는데 부족하다고 느낌',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한달간 미래에 대하여 불확실하게 느끼거나 불안해한 적이 있습니까?',
+          '지난 한 달간 자신의 미래가 불확실하게 느껴져 불안해함',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한달간 할 일들이 너무 많아 정말 중요한 일들을 잊은 적이 있습니까?',
+          '지난 한 달간 자신의 업무에 치우쳐 중요한 일들을 잊음',
           score: 1.0,
         ),
       ],
