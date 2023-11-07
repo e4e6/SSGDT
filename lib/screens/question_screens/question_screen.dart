@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jindan/config/constant.dart';
 import 'package:jindan/controller/question_controller.dart';
-import 'package:jindan/screens/body_age_result_screen.dart';
+import 'package:jindan/screens/result_screens/result_screen.dart';
 import 'package:jindan/screens/question_screens/widgets/bundle_question_image_widget.dart';
 import 'package:jindan/screens/question_screens/widgets/bundle_question_widget.dart';
 import 'package:provider/provider.dart';
@@ -56,7 +56,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   onPressed: () {
                     if(questionControllerWatch.questionBundleIndex == questionControllerWatch.questionBundleList.length-1)
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => BodyAgeResultScreen(),)
+                        builder: (context) => ResultScreen(),)
                       );
                     questionControllerWatch.changeToNextQuestionBundle();
                   },

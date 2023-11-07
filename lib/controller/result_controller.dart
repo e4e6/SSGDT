@@ -3,8 +3,10 @@ import 'package:jindan/controller/question_controller.dart';
 import 'package:jindan/models/question_model/question_bundle_item.dart';
 import 'package:jindan/models/question_model/question_item.dart';
 
-class HelthResultController with ChangeNotifier{
+class ResultController with ChangeNotifier{
   double _score = 0.0;
+
+
   double getScore({required List<QuestionBundleItem>questionBundleList}) {
     _score = 0.0;
     for (int i=0; i<questionBundleList.length; i++) {
@@ -16,5 +18,4 @@ class HelthResultController with ChangeNotifier{
     }
     return _score;
   }
-
 }

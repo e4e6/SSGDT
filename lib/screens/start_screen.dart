@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:jindan/screens/question_screens/question_screen.dart';
 
-class BodyAgeTestStartScreen extends StatefulWidget {
-  const BodyAgeTestStartScreen({Key? key}) : super(key: key);
+class StartScreen extends StatefulWidget {
+  const StartScreen({Key? key}) : super(key: key);
 
   @override
-  State<BodyAgeTestStartScreen> createState() => _BodyAgeTestStartScreenState();
+  State<StartScreen> createState() => _StartScreenState();
 }
 
-class _BodyAgeTestStartScreenState extends State<BodyAgeTestStartScreen> {
+class _StartScreenState extends State<StartScreen> {
   double mainWidth = 300.0;
   double imageContainerHeight = 400.0;
   double sizedBoxHeight = 100.0;

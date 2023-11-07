@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jindan/controller/question_controller.dart';
-import 'package:jindan/screens/body_age_test_start_screen.dart';
+import 'package:jindan/screens/start_screen.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ],
     child:MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:BodyAgeTestStartScreen(),
+      home:StartScreen(),
     ),);
   }
 }

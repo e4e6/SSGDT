@@ -1,19 +1,19 @@
 // 미완성 상태라 임시로 표시할 데이터 넣어둠
 
 import 'package:flutter/material.dart';
-import 'package:jindan/controller/health_result_controller.dart';
+import 'package:jindan/controller/result_controller.dart';
 import 'package:jindan/controller/question_controller.dart';
 import 'package:provider/provider.dart';
 
 
-class BodyAgeResultScreen extends StatefulWidget {
-  const BodyAgeResultScreen({Key? key}) : super(key: key);
+class ResultScreen extends StatefulWidget {
+  const ResultScreen({Key? key}) : super(key: key);
 
   @override
-  State<BodyAgeResultScreen> createState() => _BodyAgeResultScreenState();
+  State<ResultScreen> createState() => _ResultScreenState();
 }
 
-class _BodyAgeResultScreenState extends State<BodyAgeResultScreen> {
+class _ResultScreenState extends State<ResultScreen> {
   var backgroundColor = Colors.grey[200];
   double mainWidth = 300.0;
   double imageContainerHeight = 200.0;
@@ -22,7 +22,7 @@ class _BodyAgeResultScreenState extends State<BodyAgeResultScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var helthResultController = HelthResultController();
+    var helthResultController = ResultController();
     QuestionController questionControllerWatch =
     Provider.of<QuestionController>(context, listen: true);
 

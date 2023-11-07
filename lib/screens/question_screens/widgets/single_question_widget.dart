@@ -20,26 +20,30 @@ class SingleQuestionWidget extends StatelessWidget {
     QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleIndex];
     QuestionItem questionItem = questionBundleItem.questionList[questionIndex];
 
-    return Row(
-      children: [
-        Checkbox(
-          value: questionItem.isChecked,
-        onChanged: (value) {
-          questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleIndex, questionIndex);
-        }
-
-        ),
-        Flexible(
-          child: RichText(
-            overflow: TextOverflow.ellipsis,
-            maxLines: 5,
-            // strutStyle: StrutStyle(fontSize: 16.0),
-            text: TextSpan(
-                text: questionItem.questionText,
-                style: TextStyle(color: Colors.black, fontSize: 16.0)),
+    return InkWell(
+      onTap:(){
+        questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleIndex, questionIndex);
+      },
+      child: Row(
+        children: [
+          Checkbox(
+            value: questionItem.isChecked,
+            onChanged: (value) {
+              questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleIndex, questionIndex);
+            }
           ),
-        )
-      ],
+          Flexible(
+            child: RichText(
+              overflow: TextOverflow.ellipsis,
+              maxLines: 5,
+              // strutStyle: StrutStyle(fontSize: 16.0),
+              text: TextSpan(
+                  text: questionItem.questionText,
+                  style: TextStyle(color: Colors.black, fontSize: 16.0)),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
