@@ -69,22 +69,22 @@ class _$QuestionItemCopyWithImpl<$Res, $Val extends QuestionItem>
 }
 
 /// @nodoc
-abstract class _$$_QuestionItemCopyWith<$Res>
+abstract class _$$QuestionItemImplCopyWith<$Res>
     implements $QuestionItemCopyWith<$Res> {
-  factory _$$_QuestionItemCopyWith(
-          _$_QuestionItem value, $Res Function(_$_QuestionItem) then) =
-      __$$_QuestionItemCopyWithImpl<$Res>;
+  factory _$$QuestionItemImplCopyWith(
+          _$QuestionItemImpl value, $Res Function(_$QuestionItemImpl) then) =
+      __$$QuestionItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double score, String questionText, bool isChecked});
 }
 
 /// @nodoc
-class __$$_QuestionItemCopyWithImpl<$Res>
-    extends _$QuestionItemCopyWithImpl<$Res, _$_QuestionItem>
-    implements _$$_QuestionItemCopyWith<$Res> {
-  __$$_QuestionItemCopyWithImpl(
-      _$_QuestionItem _value, $Res Function(_$_QuestionItem) _then)
+class __$$QuestionItemImplCopyWithImpl<$Res>
+    extends _$QuestionItemCopyWithImpl<$Res, _$QuestionItemImpl>
+    implements _$$QuestionItemImplCopyWith<$Res> {
+  __$$QuestionItemImplCopyWithImpl(
+      _$QuestionItemImpl _value, $Res Function(_$QuestionItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_QuestionItemCopyWithImpl<$Res>
     Object? questionText = null,
     Object? isChecked = null,
   }) {
-    return _then(_$_QuestionItem(
+    return _then(_$QuestionItemImpl(
       score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
@@ -113,8 +113,8 @@ class __$$_QuestionItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_QuestionItem implements _QuestionItem {
-  _$_QuestionItem(
+class _$QuestionItemImpl implements _QuestionItem {
+  _$QuestionItemImpl(
       {this.score = 0,
       this.questionText = "[item:]질문 내용 추가 필요",
       this.isChecked = false});
@@ -138,7 +138,7 @@ class _$_QuestionItem implements _QuestionItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionItem &&
+            other is _$QuestionItemImpl &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.questionText, questionText) ||
                 other.questionText == questionText) &&
@@ -152,15 +152,15 @@ class _$_QuestionItem implements _QuestionItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionItemCopyWith<_$_QuestionItem> get copyWith =>
-      __$$_QuestionItemCopyWithImpl<_$_QuestionItem>(this, _$identity);
+  _$$QuestionItemImplCopyWith<_$QuestionItemImpl> get copyWith =>
+      __$$QuestionItemImplCopyWithImpl<_$QuestionItemImpl>(this, _$identity);
 }
 
 abstract class _QuestionItem implements QuestionItem {
   factory _QuestionItem(
       {final double score,
       final String questionText,
-      final bool isChecked}) = _$_QuestionItem;
+      final bool isChecked}) = _$QuestionItemImpl;
 
   @override
   double get score;
@@ -170,6 +170,6 @@ abstract class _QuestionItem implements QuestionItem {
   bool get isChecked;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionItemCopyWith<_$_QuestionItem> get copyWith =>
+  _$$QuestionItemImplCopyWith<_$QuestionItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

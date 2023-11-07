@@ -86,11 +86,11 @@ class _$QuestionBundleItemCopyWithImpl<$Res, $Val extends QuestionBundleItem>
 }
 
 /// @nodoc
-abstract class _$$_QuestionBundleItemCopyWith<$Res>
+abstract class _$$QuestionBundleItemImplCopyWith<$Res>
     implements $QuestionBundleItemCopyWith<$Res> {
-  factory _$$_QuestionBundleItemCopyWith(_$_QuestionBundleItem value,
-          $Res Function(_$_QuestionBundleItem) then) =
-      __$$_QuestionBundleItemCopyWithImpl<$Res>;
+  factory _$$QuestionBundleItemImplCopyWith(_$QuestionBundleItemImpl value,
+          $Res Function(_$QuestionBundleItemImpl) then) =
+      __$$QuestionBundleItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -102,11 +102,11 @@ abstract class _$$_QuestionBundleItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionBundleItemCopyWithImpl<$Res>
-    extends _$QuestionBundleItemCopyWithImpl<$Res, _$_QuestionBundleItem>
-    implements _$$_QuestionBundleItemCopyWith<$Res> {
-  __$$_QuestionBundleItemCopyWithImpl(
-      _$_QuestionBundleItem _value, $Res Function(_$_QuestionBundleItem) _then)
+class __$$QuestionBundleItemImplCopyWithImpl<$Res>
+    extends _$QuestionBundleItemCopyWithImpl<$Res, _$QuestionBundleItemImpl>
+    implements _$$QuestionBundleItemImplCopyWith<$Res> {
+  __$$QuestionBundleItemImplCopyWithImpl(_$QuestionBundleItemImpl _value,
+      $Res Function(_$QuestionBundleItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$_QuestionBundleItemCopyWithImpl<$Res>
     Object? initialScore = null,
     Object? imagePath = null,
   }) {
-    return _then(_$_QuestionBundleItem(
+    return _then(_$QuestionBundleItemImpl(
       questionTitle: null == questionTitle
           ? _value.questionTitle
           : questionTitle // ignore: cast_nullable_to_non_nullable
@@ -145,13 +145,13 @@ class __$$_QuestionBundleItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_QuestionBundleItem implements _QuestionBundleItem {
-  _$_QuestionBundleItem(
-      {this.questionTitle = "[item:]제목 추가 필요",
+class _$QuestionBundleItemImpl implements _QuestionBundleItem {
+  _$QuestionBundleItemImpl(
+      {this.questionTitle = "[question_bundle_item:]제목 추가 필요",
       required final List<QuestionItem> questionList,
       this.isMultipleSelectionsAllowed = false,
       this.initialScore = 0.0,
-      this.imagePath = "[item:]이미지 주소 추가 필요"})
+      this.imagePath = "[question_bundle_item:]이미지 주소 추가 필요"})
       : _questionList = questionList;
 
   @override
@@ -184,7 +184,7 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuestionBundleItem &&
+            other is _$QuestionBundleItemImpl &&
             (identical(other.questionTitle, questionTitle) ||
                 other.questionTitle == questionTitle) &&
             const DeepCollectionEquality()
@@ -211,8 +211,8 @@ class _$_QuestionBundleItem implements _QuestionBundleItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionBundleItemCopyWith<_$_QuestionBundleItem> get copyWith =>
-      __$$_QuestionBundleItemCopyWithImpl<_$_QuestionBundleItem>(
+  _$$QuestionBundleItemImplCopyWith<_$QuestionBundleItemImpl> get copyWith =>
+      __$$QuestionBundleItemImplCopyWithImpl<_$QuestionBundleItemImpl>(
           this, _$identity);
 }
 
@@ -222,7 +222,7 @@ abstract class _QuestionBundleItem implements QuestionBundleItem {
       required final List<QuestionItem> questionList,
       final bool isMultipleSelectionsAllowed,
       final double initialScore,
-      final String imagePath}) = _$_QuestionBundleItem;
+      final String imagePath}) = _$QuestionBundleItemImpl;
 
   @override
   String get questionTitle;
@@ -236,6 +236,6 @@ abstract class _QuestionBundleItem implements QuestionBundleItem {
   String get imagePath;
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionBundleItemCopyWith<_$_QuestionBundleItem> get copyWith =>
+  _$$QuestionBundleItemImplCopyWith<_$QuestionBundleItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
