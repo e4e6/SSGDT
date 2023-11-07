@@ -17,7 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ChangeNotifierProvider(create: (_) => QuestionController()),
     ],
     child:MaterialApp(
+      debugShowCheckedModeBanner: false,
       home:BodyAgeTestStartScreen(),
-    ));
+    ),);
   }
 }
