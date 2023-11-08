@@ -1,21 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:jindan/controller/question_controller.dart';
 import 'package:jindan/models/question_model/question_bundle_item.dart';
 import 'package:jindan/models/question_model/question_item.dart';
+import 'package:jindan/models/result_model/result_item.dart';
+import 'package:jindan/models/result_model/result_model.dart';
 
 class ResultController with ChangeNotifier{
-  double _score = 0.0;
+  double score = 0.0;
+  int index = 0;
+  List<ResultItem> resultList = ResultModel().healthAgeResultItems;
 
-
-  double getScore({required List<QuestionBundleItem>questionBundleList}) {
-    _score = 0.0;
+  void setScore({required List<QuestionBundleItem>questionBundleList}){
+    double _newScore = 0.0;
     for (int i=0; i<questionBundleList.length; i++) {
-      _score += questionBundleList[i].initialScore;
+      _newScore += questionBundleList[i].initialScore;
       for (int j = 0; j < questionBundleList[i].questionList.length; j++) {
         List<QuestionItem> questionList = questionBundleList[i].questionList;
-        if (questionList[j].isChecked == true) _score += questionList[j].score;
+        if (questionList[j].isChecked == true) _newScore += questionList[j].score;
       }
     }
-    return _score;
+    score = _newScore;
+    notifyListeners();
   }
+
+  void setIndex({required double score}){
+    if(score >= 15 ) index = 0;
+    if(score >= 5 && score<15) index = 1;
+    if(score >= -3 && score<5) index = 2;
+    if(score >= -7 && score<-3) index = 3;
+    if(score<-7) index = 4;
+    notifyListeners();
+  }
+
 }

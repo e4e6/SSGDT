@@ -19,7 +19,7 @@ class _BundleQuestionImageWidgetState extends State<BundleQuestionImageWidget> {
       borderRadius: BorderRadius.circular(15),
       child: Image.asset(
         questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleIndex].imagePath,
-      width:MediaQuery.of(context).size.width - 40
+      width:320
       ),
     );
   }

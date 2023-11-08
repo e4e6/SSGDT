@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ResultItem {
-  String get questionText => throw _privateConstructorUsedError;
+  String get resultText => throw _privateConstructorUsedError;
   double get resultRating => throw _privateConstructorUsedError;
   String get imagePath => throw _privateConstructorUsedError;
 
@@ -31,7 +31,7 @@ abstract class $ResultItemCopyWith<$Res> {
           ResultItem value, $Res Function(ResultItem) then) =
       _$ResultItemCopyWithImpl<$Res, ResultItem>;
   @useResult
-  $Res call({String questionText, double resultRating, String imagePath});
+  $Res call({String resultText, double resultRating, String imagePath});
 }
 
 /// @nodoc
@@ -47,14 +47,14 @@ class _$ResultItemCopyWithImpl<$Res, $Val extends ResultItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionText = null,
+    Object? resultText = null,
     Object? resultRating = null,
     Object? imagePath = null,
   }) {
     return _then(_value.copyWith(
-      questionText: null == questionText
-          ? _value.questionText
-          : questionText // ignore: cast_nullable_to_non_nullable
+      resultText: null == resultText
+          ? _value.resultText
+          : resultText // ignore: cast_nullable_to_non_nullable
               as String,
       resultRating: null == resultRating
           ? _value.resultRating
@@ -76,7 +76,7 @@ abstract class _$$ResultItemImplCopyWith<$Res>
       __$$ResultItemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String questionText, double resultRating, String imagePath});
+  $Res call({String resultText, double resultRating, String imagePath});
 }
 
 /// @nodoc
@@ -90,14 +90,14 @@ class __$$ResultItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionText = null,
+    Object? resultText = null,
     Object? resultRating = null,
     Object? imagePath = null,
   }) {
     return _then(_$ResultItemImpl(
-      questionText: null == questionText
-          ? _value.questionText
-          : questionText // ignore: cast_nullable_to_non_nullable
+      resultText: null == resultText
+          ? _value.resultText
+          : resultText // ignore: cast_nullable_to_non_nullable
               as String,
       resultRating: null == resultRating
           ? _value.resultRating
@@ -115,13 +115,13 @@ class __$$ResultItemImplCopyWithImpl<$Res>
 
 class _$ResultItemImpl implements _ResultItem {
   _$ResultItemImpl(
-      {this.questionText = "[result_item:]결과 내용 추가 필요",
+      {this.resultText = "[result_item:]결과 내용 추가 필요",
       this.resultRating = 0.0,
       this.imagePath = "[result_item:]이미지 주소 추가 필요"});
 
   @override
   @JsonKey()
-  final String questionText;
+  final String resultText;
   @override
   @JsonKey()
   final double resultRating;
@@ -131,7 +131,7 @@ class _$ResultItemImpl implements _ResultItem {
 
   @override
   String toString() {
-    return 'ResultItem(questionText: $questionText, resultRating: $resultRating, imagePath: $imagePath)';
+    return 'ResultItem(resultText: $resultText, resultRating: $resultRating, imagePath: $imagePath)';
   }
 
   @override
@@ -139,8 +139,8 @@ class _$ResultItemImpl implements _ResultItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ResultItemImpl &&
-            (identical(other.questionText, questionText) ||
-                other.questionText == questionText) &&
+            (identical(other.resultText, resultText) ||
+                other.resultText == resultText) &&
             (identical(other.resultRating, resultRating) ||
                 other.resultRating == resultRating) &&
             (identical(other.imagePath, imagePath) ||
@@ -149,7 +149,7 @@ class _$ResultItemImpl implements _ResultItem {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, questionText, resultRating, imagePath);
+      Object.hash(runtimeType, resultText, resultRating, imagePath);
 
   @JsonKey(ignore: true)
   @override
@@ -160,12 +160,12 @@ class _$ResultItemImpl implements _ResultItem {
 
 abstract class _ResultItem implements ResultItem {
   factory _ResultItem(
-      {final String questionText,
+      {final String resultText,
       final double resultRating,
       final String imagePath}) = _$ResultItemImpl;
 
   @override
-  String get questionText;
+  String get resultText;
   @override
   double get resultRating;
   @override
