@@ -20,9 +20,9 @@ class _StartScreenState extends State<StartScreen> {
         child: Column(
           children: [
             SizedBox(height: sizedBoxHeight,),
-            RoundedShadowContainer(width: mainWidth, height: imageContainerHeight, text: 'Image: HowOldAreYou?',),
+            StartImageContainer(width: mainWidth, height: imageContainerHeight, text: 'Image: HowOldAreYou?',),
             SizedBox(height: 30,),
-            RoundedShadowButton(text: '시작',height: 80,width: mainWidth,)
+            StartButton(text: '시작',height: 80,width: mainWidth,)
           ],
         ),
       )
@@ -31,8 +31,8 @@ class _StartScreenState extends State<StartScreen> {
   }
 }
 
-class RoundedShadowContainer extends StatelessWidget {
-  RoundedShadowContainer({Key? key, required this.width,required this.height, required this.text}) : super(key: key);
+class StartImageContainer extends StatelessWidget {
+  StartImageContainer({Key? key, required this.width,required this.height, required this.text}) : super(key: key);
   double width;
   double height;
   String text;
@@ -69,8 +69,8 @@ class RoundedShadowContainer extends StatelessWidget {
   }
 }
 
-class RoundedShadowButton extends StatelessWidget {
-  RoundedShadowButton({Key? key, required this.width,required this.height, required this.text}) : super(key: key);
+class StartButton extends StatelessWidget {
+  StartButton({Key? key, required this.width,required this.height, required this.text}) : super(key: key);
   double width;
   double height;
   String text;

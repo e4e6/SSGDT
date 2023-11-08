@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jindan/controller/result_controller.dart';
 import 'package:jindan/controller/question_controller.dart';
+import 'package:jindan/screens/result_screens/widgets/re_start_button.dart';
 import 'package:jindan/screens/result_screens/widgets/result_image_widget.dart';
 import 'package:jindan/screens/result_screens/widgets/result_text_widget.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,7 @@ class _ResultScreenState extends State<ResultScreen> {
   double mainWidth = 300.0;
   double imageContainerHeight = 200.0;
   double sizedBoxHeightHigh = 100.0;
-  double sizedBoxHeightLow = 20;
+  double sizedBoxHeightLow = 20.0;
 
   @override
   void initState() {
@@ -48,7 +49,11 @@ class _ResultScreenState extends State<ResultScreen> {
             SizedBox(height: sizedBoxHeightLow,),
             ResultTextWidget(age: resultControllerWatch.score,
                 explanation: resultControllerWatch.resultList[resultControllerWatch.index].resultText),
-        ],),
+            SizedBox(height: sizedBoxHeightLow,),
+
+            ReStartButton(width: 300, height: 80, text: '다시 검사하기'),
+          ],
+        ),
       )
     );
   }

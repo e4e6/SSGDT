@@ -15,6 +15,14 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   @override
+  void initState() {
+    QuestionController questionControllerListen =
+    Provider.of<QuestionController>(context, listen: false);
+    super.initState();
+    questionControllerListen.ChangeQuestionBundleListandIndexToInitialState();
+  }
+
+  @override
   Widget build(BuildContext _) {
 
     QuestionController questionControllerWatch =
@@ -27,13 +35,38 @@ class _QuestionScreenState extends State<QuestionScreen> {
             height: 40,
           ),
 
-          BundleQuestionImageWidget(),
+
+
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 500),
+            child: BundleQuestionImageWidget(),
+          ),
 
           SizedBox(
             height: 20,
           ),
 
-          BundleQuestionWidget(),
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            child: BundleQuestionWidget(
+              key: ValueKey<int>(questionControllerWatch.questionBundleIndex),
+            ),
+            transitionBuilder: (child, animation) {
+              return FadeTransition(
+                opacity: animation,
+                child: ScaleTransition(
+                  scale: animation,
+                  child: child,
+                ),
+              );
+            },
+          ),
+
+          // AnimatedSwitcher(
+          //   duration: const Duration(milliseconds: 500), // 애니메이션 지속 시간 설정
+          //   child: BundleQuestionWidget(key: ValueKey<int>(questionControllerWatch.questionBundleIndex)),
+          // ),
+          // BundleQuestionWidget(),
 
           const Expanded(
             child: Center(child: null),
@@ -42,22 +75,27 @@ class _QuestionScreenState extends State<QuestionScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
+              Visibility(
+                visible: questionControllerWatch.questionBundleIndex != 0,
+                child: ElevatedButton(
                   onPressed: () {
                     questionControllerWatch.changeToPreviousQuestionBundle();
                   },
                   child: Text(
                     ' 이전 ',
                     style: TextStyle(fontSize: 20),
-                  )
+                  ),
+                ),
+              ),
+              Visibility(
+                visible: questionControllerWatch.questionBundleIndex == 0,
+                child: SizedBox(width:94),
               ),
               SizedBox(width: 80,),
               ElevatedButton(
                   onPressed: () {
                     if(questionControllerWatch.questionBundleIndex == questionControllerWatch.questionBundleList.length-1)
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ResultScreen(),)
-                      );
+                      questionControllerWatch.openResultScreen(context);
                     questionControllerWatch.changeToNextQuestionBundle();
                   },
                   child: Text(
