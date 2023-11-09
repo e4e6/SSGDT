@@ -4,14 +4,14 @@ import 'package:jindan/models/result_model/result_item.dart';
 class ResultModel{
   List<ResultItem> healthAgeResultItems = [
     ResultItem(
-      resultText: "오! 당신의 건강나이가 실제 나이보다 조금 더 많이 나왔네요. 멀지 않은 과거에서 오셨나요? 남북 전쟁에 참전하셨던 것은 아니죠?",
-      imagePath: 'assets/image/result_-2.png',
-      resultRating: -2.0
+        resultText: "당신의 건강나이가 마치 고대 유물처럼 보물상자에서 발견된 것 같네요! 실제 나이보다 훨씬 높아서 소파에서 일어나는 것도 대업처럼 느껴질 거예요.",
+        imagePath: 'assets/image/result_-2.png',
+        resultRating: -2.0
     ),
     ResultItem(
-        resultText: "당신의 건강나이가 마치 고대 유물처럼 보물상자에서 발견된 것 같네요! 실제 나이보다 훨씬 높아서 소파에서 일어나는 것도 대업처럼 느껴질 거예요.",
-        imagePath: 'assets/image/result_-1.png',
-        resultRating: -1.0
+      resultText: "오! 당신의 건강나이가 실제 나이보다 조금 더 많이 나왔네요. 멀지 않은 과거에서 오셨나요? 남북 전쟁에 참전하셨던 것은 아니죠?",
+      imagePath: 'assets/image/result_-1.png',
+      resultRating: -1.0
     ),
     ResultItem(
         resultText: "현재 우리나라 대통령의 이름을 말하라고 하면 정확하게 말씀하실거 같은 나이이시군요! 이제 다음 대통령의 이름도 알아가 보는 것이 어떨까요?",
