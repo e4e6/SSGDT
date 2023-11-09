@@ -72,11 +72,11 @@ class QuestionModel{
           score: 1.0,
         ),
         QuestionItem(
-          questionText: '하루 1갑 미만.',
+          questionText: '하루 1갑 미만으로 피운다.',
           score: 3.0,
         ),
         QuestionItem(
-          questionText: '하루 1갑 이상.',
+          questionText: '하루 1갑 이상 피운다.',
           score: 5.0,
         ),
       ],
@@ -98,11 +98,11 @@ class QuestionModel{
           score: 1.0,
         ),
         QuestionItem(
-          questionText: '일주일에 2~3회이고 한 번에 소주 1병 이상.',
+          questionText: '일주일에 2~3회이고 한 번에 소주 1병 이상 마신다.',
           score: 2.0,
         ),
         QuestionItem(
-          questionText: '일주일에 4회 이상, 한 번에 소주 1병 이상.',
+          questionText: '일주일에 4회 이상, 한 번에 소주 1병 이상 마신다.',
           score: 4.0,
         ),
       ],
@@ -115,27 +115,27 @@ class QuestionModel{
       questionList: [
         QuestionItem(
           questionText:
-          '지난 한 달간 정신적으로 감당하기 힘든 스트레스를 겪음',
+          '지난 한 달간 정신적으로 감당하기 힘든 스트레스를 겪은 적이 있다.',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한 달간 자신의 신념에 따라 살아가는데 어려움을 느낌',
+          '지난 한 달간 자신의 신념에 따라 살아가는데 어려움을 느낀 적이 있다.',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한 달간 자신이 처한 환경이 인간답게 살아가는데 부족하다고 느낌',
+          '지난 한 달간 인간답게 살아가는데 부족함이 있다고 느낀 적이 있다.',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한 달간 자신의 미래가 불확실하게 느껴져 불안해함',
+          '지난 한 달간 자신의 미래에 대해 불안함을 느낀 적이 있다.',
           score: 1.0,
         ),
         QuestionItem(
           questionText:
-          '지난 한 달간 자신의 업무에 치우쳐 중요한 일들을 잊음',
+          '지난 한 달간 자신의 업무에 치우쳐 중요한 일들을 잊은 적이 있다.',
           score: 1.0,
         ),
       ],
