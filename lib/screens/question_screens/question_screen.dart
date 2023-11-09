@@ -35,8 +35,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
             height: 40,
           ),
 
-
-
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 500),
             child: BundleQuestionImageWidget(),
