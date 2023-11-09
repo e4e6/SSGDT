@@ -138,6 +138,11 @@ class QuestionModel{
           '지난 한 달간 자신의 업무에 치우쳐 중요한 일들을 잊은 적이 있다.',
           score: 1.0,
         ),
+        QuestionItem(
+          questionText:
+          '해당 사항 없음',
+          score: 0,
+        ),
       ],
     ),
     QuestionBundleItem(
