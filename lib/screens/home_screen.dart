@@ -16,10 +16,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text(
+        '건강나이 테스트',
+        style: TextStyle(
+          fontWeight: FontWeight.bold, // 볼드 처리
+        ),
+      ),
+        centerTitle: true, // 중앙 정렬
+        elevation: 0.0,
+        toolbarHeight: 50.0,
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(4.0), // 선의 높이 조절
+          child: Divider(
+            color: Colors.grey, // 선의 색상 조절
+            height: 1.0, // 선의 두께 조절
+          ),
+        ),
+      ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: sizedBoxHeight,),
+            SizedBox(height: 20),
             StartImageContainer(width: mainWidth, height: imageContainerHeight, text: 'Image: HowOldAreYou?',),
             SizedBox(height: 30,),
             StartButton(text: '시작',height: 80,width: mainWidth,)
@@ -44,14 +61,6 @@ class StartImageContainer extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: Offset(0, 3),
-          ),
-        ],
         color: Colors.white,
       ),
       child: Center(
