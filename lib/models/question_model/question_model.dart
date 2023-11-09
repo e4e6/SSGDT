@@ -206,7 +206,7 @@ class QuestionModel{
       ],
     ),
     QuestionBundleItem(
-      questionTitle: 'B형 간염 혹은 바이러스 보유자',
+      questionTitle: 'B형 간염 바이러스 보균자', //일부로 이렇게 적음 (보유자->보균자) 인터넷 찾아봤더니 비슷한 건강설문에서 보균자로 표기하지 않아서 헷갈리는 사례가 꽤 있었음
       imagePath: 'assets/image/hepatitis_b_virus_carrier.png',
       questionList: [
         QuestionItem(
