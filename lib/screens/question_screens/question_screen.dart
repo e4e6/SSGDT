@@ -60,12 +60,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
             },
           ),
 
-          // AnimatedSwitcher(
-          //   duration: const Duration(milliseconds: 500), // 애니메이션 지속 시간 설정
-          //   child: BundleQuestionWidget(key: ValueKey<int>(questionControllerWatch.questionBundleIndex)),
-          // ),
-          // BundleQuestionWidget(),
-
           const Expanded(
             child: Center(child: null),
           ),
