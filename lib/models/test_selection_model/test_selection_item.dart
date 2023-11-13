@@ -9,6 +9,6 @@ class TestSelectionItem with _$TestSelectionItem {
         required List<dynamic> Test,
         @Default(0) int numberOfQuestions,
         @Default(0) int expectedTimeInMinutes,
-        @Default("[test_selection_item:]이미지 주소 추가 필요") String imagePath,
+        @Default("assets/image/question_mark.png") String imagePath,
       }) = _TestSelectionItem;
 }

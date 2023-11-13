@@ -151,7 +151,7 @@ class _$TestSelectionItemImpl implements _TestSelectionItem {
       required final List<dynamic> Test,
       this.numberOfQuestions = 0,
       this.expectedTimeInMinutes = 0,
-      this.imagePath = "[test_selection_item:]이미지 주소 추가 필요"})
+      this.imagePath = "assets/image/question_mark.png"})
       : _Test = Test;
 
   @override
