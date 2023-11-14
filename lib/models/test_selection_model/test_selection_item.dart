@@ -7,7 +7,6 @@ part 'test_selection_item.freezed.dart';
 class TestSelectionItem with _$TestSelectionItem {
   factory TestSelectionItem(
       {@Default("[question_bundle_item:]제목 추가 필요") String questionTitle,
-        required List<dynamic> Test,
         @Default([]) List<QuestionBundleItem> questionBundleList,
         @Default(0) int numberOfQuestions,
         @Default(0) int expectedTimeInMinutes,
