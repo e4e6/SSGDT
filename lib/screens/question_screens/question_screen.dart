@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jindan/config/constant.dart';
 import 'package:jindan/controller/question_controller.dart';
-import 'package:jindan/screens/result_screens/result_screen.dart';
 import 'package:jindan/screens/question_screens/widgets/bundle_question_image_widget.dart';
 import 'package:jindan/screens/question_screens/widgets/bundle_question_widget.dart';
 import 'package:provider/provider.dart';

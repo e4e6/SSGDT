@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jindan/controller/result_controller.dart';
 import 'package:jindan/controller/question_controller.dart';
-import 'package:jindan/screens/result_screens/widgets/re_start_button.dart';
-import 'package:jindan/screens/result_screens/widgets/result_image_widget.dart';
-import 'package:jindan/screens/result_screens/widgets/result_text_widget.dart';
+import 'package:jindan/screens/result_screen/widgets/re_start_button.dart';
+import 'package:jindan/screens/result_screen/widgets/result_image_widget.dart';
+import 'package:jindan/screens/result_screen/widgets/result_text_widget.dart';
 import 'package:provider/provider.dart';
 
 

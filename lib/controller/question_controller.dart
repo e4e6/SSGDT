@@ -3,7 +3,7 @@ import 'package:jindan/models/question_model/question_bundle_item.dart';
 import 'package:jindan/models/question_model/question_item.dart';
 import 'package:jindan/models/question_model/question_model.dart';
 import 'package:jindan/screens/question_screens/question_screen.dart';
-import 'package:jindan/screens/result_screens/result_screen.dart';
+import 'package:jindan/screens/result_screen/result_screen.dart';
 
 class QuestionController with ChangeNotifier{
   int questionBundleListIndex = 0;
