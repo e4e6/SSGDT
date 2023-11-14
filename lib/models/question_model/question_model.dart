@@ -246,4 +246,296 @@ class QuestionModel{
       ],
     ),
   ];
+  List<QuestionBundleItem> depressionQuestionBundle = [
+    QuestionBundleItem(
+      questionTitle: '기분이 우울하거나 좌절감을 느끼십니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '흥미나 즐거움을 느끼는 것에 관심이 없으십니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '에너지 수준이 낮아져 일상적인 활동을 수행하기 어렵습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '수면 패턴이 변화하거나 잠을 자기 어렵습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '자신을 비난하거나 자책하는 경향이 있습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '집중력이 떨어져 일상적인 작업을 수행하기 어렵습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '식욕이 변화하여 식사량이 감소하거나 증가하였습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '자신에 대한 무관심이나 무기력한 느낌이 있습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '자살이나 죽음에 대한 생각이 있습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+    QuestionBundleItem(
+      questionTitle: '사회적 상호작용이 감소하였습니까?',
+      imagePath: 'assets/image/question_mark.png',
+      isMultipleSelectionsAllowed: true,
+      initialScore: 4,
+      questionList: [
+        QuestionItem(
+          questionText:
+          '1일 미만',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '1~2일',
+          score: 1.0,
+        ),
+        QuestionItem(
+          questionText: '3~4일',
+          score: 3.0,
+        ),
+        QuestionItem(
+          questionText: '5~7일',
+          score: 4,
+        ),
+        QuestionItem(
+          questionText: '2주 이상 거의 매일',
+          score: 5,
+        ),
+      ],
+    ),
+  ];
 }
