@@ -12,8 +12,8 @@ class BundleQuestionImageWidget extends StatefulWidget {
 class _BundleQuestionImageWidgetState extends State<BundleQuestionImageWidget> {
   @override
   Widget build(BuildContext _) {
-    QuestionController questionControllerWatch =
-    Provider.of<QuestionController>(_, listen: true);
+    final questionControllerWatch = _.watch<QuestionController>();
+    final questionControllerRead = _.read<QuestionController>();
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(15),

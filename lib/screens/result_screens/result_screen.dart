@@ -22,20 +22,17 @@ class _ResultScreenState extends State<ResultScreen> {
 
   @override
   void initState() {
-    ResultController resultControllerListen =
-    Provider.of<ResultController>(context, listen: false);
-    QuestionController questionControllerListen =
-    Provider.of<QuestionController>(context, listen: false);
+    final questionControllerRead = context.read<QuestionController>();
+    final resultControllerRead = context.read<ResultController>();
     super.initState();
 
-    resultControllerListen.setScore(questionBundleList: questionControllerListen.questionBundleList);
-    resultControllerListen.setIndex(score: resultControllerListen.score);
+    resultControllerRead.setScore(questionBundleList: questionControllerRead.questionBundleList);
+    resultControllerRead.setIndex(score: resultControllerRead.score);
   }
 
   @override
-  Widget build(BuildContext context) {
-    ResultController resultControllerWatch =
-    Provider.of<ResultController>(context, listen: true);
+  Widget build(BuildContext _) {
+    final resultControllerRead = _.read<ResultController>();
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -45,10 +42,10 @@ class _ResultScreenState extends State<ResultScreen> {
             SizedBox(height: sizedBoxHeightHigh,),
             ResultImageWidget(
                 width: 320,
-                image: resultControllerWatch.resultList[resultControllerWatch.index].imagePath),
+                image: resultControllerRead.resultList[resultControllerRead.index].imagePath),
             SizedBox(height: sizedBoxHeightLow,),
-            ResultTextWidget(age: resultControllerWatch.score,
-                explanation: resultControllerWatch.resultList[resultControllerWatch.index].resultText),
+            ResultTextWidget(age: resultControllerRead.score,
+                explanation: resultControllerRead.resultList[resultControllerRead.index].resultText),
             SizedBox(height: sizedBoxHeightLow,),
 
             ReStartButton(width: 300, height: 80, text: '다시 검사하기'),

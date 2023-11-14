@@ -13,9 +13,8 @@ class SingleQuestionWidget extends StatelessWidget {
   int questionIndex;
 
   @override
-  Widget build(BuildContext context) {
-    QuestionController questionControllerWatch =
-    Provider.of<QuestionController>(context, listen: true);
+  Widget build(BuildContext _) {
+    final questionControllerWatch = _.watch<QuestionController>();
 
     QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleListIndex];
     QuestionItem questionItem = questionBundleItem.questionList[questionIndex];

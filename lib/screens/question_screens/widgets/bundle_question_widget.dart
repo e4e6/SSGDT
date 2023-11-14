@@ -14,9 +14,9 @@ class BundleQuestionWidget extends StatefulWidget {
 
 class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
   @override
-  Widget build(BuildContext context) {
-    QuestionController questionControllerWatch =
-    Provider.of<QuestionController>(context, listen: true);
+  Widget build(BuildContext _) {
+    final questionControllerWatch = _.watch<QuestionController>();
+    final questionControllerRead = _.read<QuestionController>();
 
     QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleListIndex];
 
