@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jindan/controller/test_selection_controller.dart';
 import 'package:jindan/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (_) => QuestionController()),
       ChangeNotifierProvider(create: (_) => ResultController()),
+      ChangeNotifierProvider(create: (_) => TestSelectionController()),
     ],
       child:MaterialApp(
         debugShowCheckedModeBanner: false,
