@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TestSelectionItem {
   String get questionTitle => throw _privateConstructorUsedError;
   List<dynamic> get Test => throw _privateConstructorUsedError;
+  List<QuestionBundleItem> get questionBundle =>
+      throw _privateConstructorUsedError;
   int get numberOfQuestions => throw _privateConstructorUsedError;
   int get expectedTimeInMinutes => throw _privateConstructorUsedError;
   String get imagePath => throw _privateConstructorUsedError;
@@ -36,6 +38,7 @@ abstract class $TestSelectionItemCopyWith<$Res> {
   $Res call(
       {String questionTitle,
       List<dynamic> Test,
+      List<QuestionBundleItem> questionBundle,
       int numberOfQuestions,
       int expectedTimeInMinutes,
       String imagePath});
@@ -56,6 +59,7 @@ class _$TestSelectionItemCopyWithImpl<$Res, $Val extends TestSelectionItem>
   $Res call({
     Object? questionTitle = null,
     Object? Test = null,
+    Object? questionBundle = null,
     Object? numberOfQuestions = null,
     Object? expectedTimeInMinutes = null,
     Object? imagePath = null,
@@ -69,6 +73,10 @@ class _$TestSelectionItemCopyWithImpl<$Res, $Val extends TestSelectionItem>
           ? _value.Test
           : Test // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
+      questionBundle: null == questionBundle
+          ? _value.questionBundle
+          : questionBundle // ignore: cast_nullable_to_non_nullable
+              as List<QuestionBundleItem>,
       numberOfQuestions: null == numberOfQuestions
           ? _value.numberOfQuestions
           : numberOfQuestions // ignore: cast_nullable_to_non_nullable
@@ -96,6 +104,7 @@ abstract class _$$TestSelectionItemImplCopyWith<$Res>
   $Res call(
       {String questionTitle,
       List<dynamic> Test,
+      List<QuestionBundleItem> questionBundle,
       int numberOfQuestions,
       int expectedTimeInMinutes,
       String imagePath});
@@ -114,6 +123,7 @@ class __$$TestSelectionItemImplCopyWithImpl<$Res>
   $Res call({
     Object? questionTitle = null,
     Object? Test = null,
+    Object? questionBundle = null,
     Object? numberOfQuestions = null,
     Object? expectedTimeInMinutes = null,
     Object? imagePath = null,
@@ -127,6 +137,10 @@ class __$$TestSelectionItemImplCopyWithImpl<$Res>
           ? _value._Test
           : Test // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
+      questionBundle: null == questionBundle
+          ? _value._questionBundle
+          : questionBundle // ignore: cast_nullable_to_non_nullable
+              as List<QuestionBundleItem>,
       numberOfQuestions: null == numberOfQuestions
           ? _value.numberOfQuestions
           : numberOfQuestions // ignore: cast_nullable_to_non_nullable
@@ -149,10 +163,12 @@ class _$TestSelectionItemImpl implements _TestSelectionItem {
   _$TestSelectionItemImpl(
       {this.questionTitle = "[question_bundle_item:]제목 추가 필요",
       required final List<dynamic> Test,
+      final List<QuestionBundleItem> questionBundle = const [],
       this.numberOfQuestions = 0,
       this.expectedTimeInMinutes = 0,
       this.imagePath = "assets/image/question_mark.png"})
-      : _Test = Test;
+      : _Test = Test,
+        _questionBundle = questionBundle;
 
   @override
   @JsonKey()
@@ -163,6 +179,15 @@ class _$TestSelectionItemImpl implements _TestSelectionItem {
     if (_Test is EqualUnmodifiableListView) return _Test;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_Test);
+  }
+
+  final List<QuestionBundleItem> _questionBundle;
+  @override
+  @JsonKey()
+  List<QuestionBundleItem> get questionBundle {
+    if (_questionBundle is EqualUnmodifiableListView) return _questionBundle;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questionBundle);
   }
 
   @override
@@ -177,7 +202,7 @@ class _$TestSelectionItemImpl implements _TestSelectionItem {
 
   @override
   String toString() {
-    return 'TestSelectionItem(questionTitle: $questionTitle, Test: $Test, numberOfQuestions: $numberOfQuestions, expectedTimeInMinutes: $expectedTimeInMinutes, imagePath: $imagePath)';
+    return 'TestSelectionItem(questionTitle: $questionTitle, Test: $Test, questionBundle: $questionBundle, numberOfQuestions: $numberOfQuestions, expectedTimeInMinutes: $expectedTimeInMinutes, imagePath: $imagePath)';
   }
 
   @override
@@ -188,6 +213,8 @@ class _$TestSelectionItemImpl implements _TestSelectionItem {
             (identical(other.questionTitle, questionTitle) ||
                 other.questionTitle == questionTitle) &&
             const DeepCollectionEquality().equals(other._Test, _Test) &&
+            const DeepCollectionEquality()
+                .equals(other._questionBundle, _questionBundle) &&
             (identical(other.numberOfQuestions, numberOfQuestions) ||
                 other.numberOfQuestions == numberOfQuestions) &&
             (identical(other.expectedTimeInMinutes, expectedTimeInMinutes) ||
@@ -201,6 +228,7 @@ class _$TestSelectionItemImpl implements _TestSelectionItem {
       runtimeType,
       questionTitle,
       const DeepCollectionEquality().hash(_Test),
+      const DeepCollectionEquality().hash(_questionBundle),
       numberOfQuestions,
       expectedTimeInMinutes,
       imagePath);
@@ -217,6 +245,7 @@ abstract class _TestSelectionItem implements TestSelectionItem {
   factory _TestSelectionItem(
       {final String questionTitle,
       required final List<dynamic> Test,
+      final List<QuestionBundleItem> questionBundle,
       final int numberOfQuestions,
       final int expectedTimeInMinutes,
       final String imagePath}) = _$TestSelectionItemImpl;
@@ -225,6 +254,8 @@ abstract class _TestSelectionItem implements TestSelectionItem {
   String get questionTitle;
   @override
   List<dynamic> get Test;
+  @override
+  List<QuestionBundleItem> get questionBundle;
   @override
   int get numberOfQuestions;
   @override

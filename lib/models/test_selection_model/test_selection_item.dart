@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:jindan/models/question_model/question_bundle_item.dart';
 
 part 'test_selection_item.freezed.dart';
 
@@ -7,6 +8,7 @@ class TestSelectionItem with _$TestSelectionItem {
   factory TestSelectionItem(
       {@Default("[question_bundle_item:]제목 추가 필요") String questionTitle,
         required List<dynamic> Test,
+        @Default([]) List<QuestionBundleItem> questionBundle,
         @Default(0) int numberOfQuestions,
         @Default(0) int expectedTimeInMinutes,
         @Default("assets/image/question_mark.png") String imagePath,
