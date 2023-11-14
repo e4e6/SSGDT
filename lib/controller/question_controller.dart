@@ -6,12 +6,12 @@ import 'package:jindan/screens/question_screens/question_screen.dart';
 import 'package:jindan/screens/result_screens/result_screen.dart';
 
 class QuestionController with ChangeNotifier{
-  int questionBundleIndex = 0;
+  int questionBundleListIndex = 0;
 
-  List<QuestionBundleItem> questionBundleList = QuestionModel().healthAgeQuestionBundle;
+  List<QuestionBundleItem> questionBundleList = QuestionModel().healthAgeQuestionBundleList;
 
-  void changeAllQuestionCheckboxValueToFalse({required int questionBundleIndex, required int questionIndex}) {
-    final questionBundle = questionBundleList[questionBundleIndex];
+  void changeAllQuestionCheckboxValueToFalse({required int questionBundleListIndex, required int questionIndex}) {
+    final questionBundle = questionBundleList[questionBundleListIndex];
     final question = questionBundle.questionList[questionIndex];
 
     // Toggle the checked state of the clicked checkbox
@@ -25,13 +25,13 @@ class QuestionController with ChangeNotifier{
 
     // Update the question bundle with the updated question list
     final newQuestionBundle = questionBundle.copyWith(questionList: updatedQuestionList);
-    questionBundleList[questionBundleIndex] = newQuestionBundle;
+    questionBundleList[questionBundleListIndex] = newQuestionBundle;
 
     notifyListeners();
   }
 
-  void changeQuestionCheckboxValue({required int questionBundleIndex, required int questionIndex}) {
-    final questionBundle = questionBundleList[questionBundleIndex];
+  void changeQuestionCheckboxValue({required int questionBundleListIndex, required int questionIndex}) {
+    final questionBundle = questionBundleList[questionBundleListIndex];
     final question = questionBundle.questionList[questionIndex];
 
     final newQuestion = question.copyWith(isChecked: !question.isChecked);
@@ -40,32 +40,32 @@ class QuestionController with ChangeNotifier{
       questionList: List<QuestionItem>.from(questionBundle.questionList)
         ..[questionIndex] = newQuestion,
     );
-    questionBundleList[questionBundleIndex] = newQuestionBundle;
+    questionBundleList[questionBundleListIndex] = newQuestionBundle;
     notifyListeners();
   }
-  void CheckboxHandler(int questionBundleIndex, int questionIndex) {
-    if (questionBundleList[questionBundleIndex].isMultipleSelectionsAllowed == false) {
-      changeAllQuestionCheckboxValueToFalse(questionBundleIndex: questionBundleIndex, questionIndex: questionIndex);
+  void CheckboxHandler(int questionBundleListIndex, int questionIndex) {
+    if (questionBundleList[questionBundleListIndex].isMultipleSelectionsAllowed == false) {
+      changeAllQuestionCheckboxValueToFalse(questionBundleListIndex: questionBundleListIndex, questionIndex: questionIndex);
     }
-    changeQuestionCheckboxValue(questionBundleIndex: questionBundleIndex, questionIndex: questionIndex);
+    changeQuestionCheckboxValue(questionBundleListIndex: questionBundleListIndex, questionIndex: questionIndex);
   }
 
   void changeToNextQuestionBundle() {
-    questionBundleIndex < questionBundleList.length-1
-        ? questionBundleIndex ++
-        : questionBundleIndex = questionBundleList.length-1;
+    questionBundleListIndex < questionBundleList.length-1
+        ? questionBundleListIndex ++
+        : questionBundleListIndex = questionBundleList.length-1;
     notifyListeners();
   }
   void changeToPreviousQuestionBundle() {
-    questionBundleIndex >0
-        ? questionBundleIndex --
-        : questionBundleIndex = 0;
+    questionBundleListIndex >0
+        ? questionBundleListIndex --
+        : questionBundleListIndex = 0;
     notifyListeners();
   }
 
   void ChangeQuestionBundleListandIndexToInitialState(){
-    questionBundleList = QuestionModel().healthAgeQuestionBundle;
-    questionBundleIndex = 0;
+    questionBundleList = QuestionModel().healthAgeQuestionBundleList;
+    questionBundleListIndex = 0;
     notifyListeners();
   }
 

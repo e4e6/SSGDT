@@ -2,7 +2,7 @@ import 'package:jindan/models/question_model/question_bundle_item.dart';
 import 'package:jindan/models/question_model/question_item.dart';
 
 class QuestionModel{
-  List<QuestionBundleItem> healthAgeQuestionBundle = [
+  List<QuestionBundleItem> healthAgeQuestionBundleList = [
     QuestionBundleItem(
       questionTitle: '식생활',
       imagePath: 'assets/image/diet.png',
@@ -246,7 +246,7 @@ class QuestionModel{
       ],
     ),
   ];
-  List<QuestionBundleItem> depressionQuestionBundle = [
+  List<QuestionBundleItem> depressionQuestionBundleList = [
     QuestionBundleItem(
       questionTitle: '기분이 우울하거나 좌절감을 느끼십니까?',
       imagePath: 'assets/image/question_mark.png',

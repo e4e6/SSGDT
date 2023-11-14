@@ -17,19 +17,19 @@ class SingleQuestionWidget extends StatelessWidget {
     QuestionController questionControllerWatch =
     Provider.of<QuestionController>(context, listen: true);
 
-    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleIndex];
+    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleListIndex];
     QuestionItem questionItem = questionBundleItem.questionList[questionIndex];
 
     return InkWell(
       onTap:(){
-        questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleIndex, questionIndex);
+        questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleListIndex, questionIndex);
       },
       child: Row(
         children: [
           Checkbox(
             value: questionItem.isChecked,
             onChanged: (value) {
-              questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleIndex, questionIndex);
+              questionControllerWatch.CheckboxHandler(questionControllerWatch.questionBundleListIndex, questionIndex);
             }
           ),
           Flexible(

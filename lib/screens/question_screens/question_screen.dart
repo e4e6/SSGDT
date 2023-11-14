@@ -47,7 +47,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 200),
             child: BundleQuestionWidget(
-              key: ValueKey<int>(questionControllerWatch.questionBundleIndex),
+              key: ValueKey<int>(questionControllerWatch.questionBundleListIndex),
             ),
             transitionBuilder: (child, animation) {
               return FadeTransition(
@@ -68,7 +68,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Visibility(
-                visible: questionControllerWatch.questionBundleIndex != 0,
+                visible: questionControllerWatch.questionBundleListIndex != 0,
                 child: ElevatedButton(
                   onPressed: () {
                     questionControllerWatch.changeToPreviousQuestionBundle();
@@ -80,18 +80,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 ),
               ),
               Visibility(
-                visible: questionControllerWatch.questionBundleIndex == 0,
+                visible: questionControllerWatch.questionBundleListIndex == 0,
                 child: SizedBox(width:94),
               ),
               SizedBox(width: 80,),
               ElevatedButton(
                   onPressed: () {
-                    if(questionControllerWatch.questionBundleIndex == questionControllerWatch.questionBundleList.length-1)
+                    if(questionControllerWatch.questionBundleListIndex == questionControllerWatch.questionBundleList.length-1)
                       questionControllerWatch.openResultScreen(context);
                     questionControllerWatch.changeToNextQuestionBundle();
                   },
                   child: Text(
-                    questionControllerWatch.questionBundleIndex == questionControllerWatch.questionBundleList.length-1
+                    questionControllerWatch.questionBundleListIndex == questionControllerWatch.questionBundleList.length-1
                       ? ' 제출 '
                       : ' 다음 '
                     ,

@@ -18,7 +18,7 @@ class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
     QuestionController questionControllerWatch =
     Provider.of<QuestionController>(context, listen: true);
 
-    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleIndex];
+    QuestionBundleItem questionBundleItem = questionControllerWatch.questionBundleList[questionControllerWatch.questionBundleListIndex];
 
     return AnimatedContainer(
       duration: Duration(milliseconds: 300),
