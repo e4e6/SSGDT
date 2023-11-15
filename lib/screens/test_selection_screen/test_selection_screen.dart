@@ -5,7 +5,7 @@ import 'package:jindan/screens/test_selection_screen/widgets/single_test_widget.
 import 'package:provider/provider.dart';
 
 class TestSelectionScreen extends StatefulWidget {
-  const TestSelectionScreen({Key? key}) : super(key: key);
+   TestSelectionScreen({Key? key}) : super(key: key);
 
   @override
   State<TestSelectionScreen> createState() => _TestSelectionScreenState();
@@ -16,43 +16,70 @@ class _TestSelectionScreenState extends State<TestSelectionScreen> {
   Widget build(BuildContext _) {
     final testSelectionControllerWatch = _.watch<TestSelectionController>();
     final testSelectionControllerRead = _.read<TestSelectionController>();
+    //
+    // double mainWidth = 300.0;
+    // double imageContainerHeight = 400.0;
+    // double sizedBoxHeight = 100.0;
 
-    double mainWidth = 300.0;
-    double imageContainerHeight = 400.0;
-    double sizedBoxHeight = 100.0;
+    // return Scaffold(
+    //     appBar: AppBar(title: Text(
+    //       '건강나이 테스트',
+    //       style: TextStyle(
+    //         fontWeight: FontWeight.bold, // 볼드 처리
+    //       ),
+    //     ),
+    //       centerTitle: true, // 중앙 정렬
+    //       elevation: 0.0,
+    //       toolbarHeight: 50.0,
+    //       bottom: PreferredSize(
+    //         preferredSize: Size.fromHeight(4.0), // 선의 높이 조절
+    //         child: Divider(
+    //           color: Colors.grey, // 선의 색상 조절
+    //           height: 1.0, // 선의 두께 조절
+    //         ),
+    //       ),
+    //     ),
+    //     body: Center(
+    //       child: Column(
+    //         children: [
+    //           SizedBox(height: 20),
+    //           StartImageContainer(width: mainWidth, height: imageContainerHeight, text: 'Image: HowOldAreYou?',),
+    //           SizedBox(height: 30,),
+    //           StartButton(text: '시작',height: 80,width: mainWidth,)
+    //         ],
+    //       ),
+    //     )
+    //
+    // );
 
-    return Scaffold(
-        appBar: AppBar(title: Text(
-          '건강나이 테스트',
-          style: TextStyle(
-            fontWeight: FontWeight.bold, // 볼드 처리
-          ),
-        ),
-          centerTitle: true, // 중앙 정렬
-          elevation: 0.0,
-          toolbarHeight: 50.0,
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(4.0), // 선의 높이 조절
-            child: Divider(
-              color: Colors.grey, // 선의 색상 조절
-              height: 1.0, // 선의 두께 조절
+      return Scaffold(body: Column(
+        children: [
+          Center(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SingleTestWidget(
+                    imagePath: testSelectionControllerRead.testSelectionItemList[0].imagePath,
+                    duration: '12min',
+                    title: '건강나이 테스트',
+                    questionCount: '10',
+                    boxHeight: 140,
+                    boxWidth: 320,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => QuestionScreen()),
+                      );
+                    },
+                  )
+                ],
+              ),
             ),
           ),
-        ),
-        body: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 20),
-              StartImageContainer(width: mainWidth, height: imageContainerHeight, text: 'Image: HowOldAreYou?',),
-              SizedBox(height: 30,),
-              StartButton(text: '시작',height: 80,width: mainWidth,)
-            ],
-          ),
-        )
-
+        ],
+      )
     );
-
-    return SingleTestWidget();
     //   Scaffold(
     //   body: ListView.builder(
     //     shrinkWrap: true,
