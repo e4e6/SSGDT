@@ -6,7 +6,6 @@ import 'package:jindan/screens/result_screen/widgets/result_image_widget.dart';
 import 'package:jindan/screens/result_screen/widgets/result_text_widget.dart';
 import 'package:provider/provider.dart';
 
-
 class ResultScreen extends StatefulWidget {
   const ResultScreen({Key? key}) : super(key: key);
 
@@ -15,8 +14,6 @@ class ResultScreen extends StatefulWidget {
 }
 class _ResultScreenState extends State<ResultScreen> {
   var backgroundColor = Colors.grey[200];
-  double mainWidth = 300.0;
-  double imageContainerHeight = 200.0;
   double sizedBoxHeightHigh = 100.0;
   double sizedBoxHeightLow = 20.0;
 
