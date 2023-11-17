@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jindan/controller/question_controller.dart';
 import 'package:jindan/controller/test_selection_controller.dart';
 import 'package:jindan/screens/question_screens/question_screen.dart';
 import 'package:jindan/screens/test_selection_screen/widgets/single_test_widget.dart';
@@ -53,6 +54,8 @@ class _TestSelectionScreenState extends State<TestSelectionScreen> {
                 boxHeight: 140,
                 boxWidth: 320,
                 onTap: () {
+                  final questionControllerRead = context.read<QuestionController>();
+                  questionControllerRead.ChangeQuestionBundleListandIndexToInitialState();
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => QuestionScreen()),

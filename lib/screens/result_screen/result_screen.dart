@@ -18,16 +18,6 @@ class _ResultScreenState extends State<ResultScreen> {
   double sizedBoxHeightLow = 20.0;
 
   @override
-  void initState() {
-    final questionControllerRead = context.read<QuestionController>();
-    final resultControllerRead = context.read<ResultController>();
-    super.initState();
-
-    resultControllerRead.setScore(questionBundleList: questionControllerRead.questionBundleList);
-    resultControllerRead.setIndex(score: resultControllerRead.score);
-  }
-
-  @override
   Widget build(BuildContext _) {
     final resultControllerRead = _.read<ResultController>();
 

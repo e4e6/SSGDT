@@ -14,13 +14,6 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   @override
-  void initState() {
-    final questionControllerRead = context.read<QuestionController>();
-    super.initState();
-    questionControllerRead.ChangeQuestionBundleListandIndexToInitialState();
-  }
-
-  @override
   Widget build(BuildContext _) {
     final questionControllerWatch = _.watch<QuestionController>();
     final questionControllerRead = _.read<QuestionController>();

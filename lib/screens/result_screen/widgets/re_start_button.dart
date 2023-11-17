@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jindan/controller/question_controller.dart';
 import 'package:jindan/screens/question_screens/question_screen.dart';
+import 'package:provider/provider.dart';
 
 class ReStartButton extends StatelessWidget {
   ReStartButton({Key? key, required this.width,required this.height, required this.text}) : super(key: key);
@@ -12,6 +14,8 @@ class ReStartButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
+        final questionControllerRead = context.read<QuestionController>();
+        questionControllerRead.ChangeQuestionBundleListandIndexToInitialState();
         Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => QuestionScreen(),)
         );

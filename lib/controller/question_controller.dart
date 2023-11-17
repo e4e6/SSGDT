@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:jindan/controller/result_controller.dart';
 import 'package:jindan/models/question_model/question_bundle_item.dart';
 import 'package:jindan/models/question_model/question_item.dart';
 import 'package:jindan/models/question_model/question_model.dart';
 import 'package:jindan/screens/question_screens/question_screen.dart';
 import 'package:jindan/screens/result_screen/result_screen.dart';
+import 'package:provider/provider.dart';
 
 class QuestionController with ChangeNotifier{
   int questionBundleListIndex = 0;
@@ -85,6 +87,11 @@ class QuestionController with ChangeNotifier{
   }
 
   void openResultScreen(BuildContext context) {
+    final questionControllerRead = context.read<QuestionController>();
+    final resultControllerRead = context.read<ResultController>();
+    resultControllerRead.setScore(questionBundleList: questionControllerRead.questionBundleList);
+    resultControllerRead.setIndex(score: resultControllerRead.score);
+
     Navigator.of(context).pushReplacement(PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => ResultScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
