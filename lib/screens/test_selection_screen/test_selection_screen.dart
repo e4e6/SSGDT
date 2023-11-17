@@ -16,70 +16,56 @@ class _TestSelectionScreenState extends State<TestSelectionScreen> {
   Widget build(BuildContext _) {
     final testSelectionControllerWatch = _.watch<TestSelectionController>();
     final testSelectionControllerRead = _.read<TestSelectionController>();
-    //
-    // double mainWidth = 300.0;
-    // double imageContainerHeight = 400.0;
-    // double sizedBoxHeight = 100.0;
 
-    // return Scaffold(
-    //     appBar: AppBar(title: Text(
-    //       '건강나이 테스트',
-    //       style: TextStyle(
-    //         fontWeight: FontWeight.bold, // 볼드 처리
-    //       ),
-    //     ),
-    //       centerTitle: true, // 중앙 정렬
-    //       elevation: 0.0,
-    //       toolbarHeight: 50.0,
-    //       bottom: PreferredSize(
-    //         preferredSize: Size.fromHeight(4.0), // 선의 높이 조절
-    //         child: Divider(
-    //           color: Colors.grey, // 선의 색상 조절
-    //           height: 1.0, // 선의 두께 조절
-    //         ),
-    //       ),
-    //     ),
-    //     body: Center(
-    //       child: Column(
-    //         children: [
-    //           SizedBox(height: 20),
-    //           StartImageContainer(width: mainWidth, height: imageContainerHeight, text: 'Image: HowOldAreYou?',),
-    //           SizedBox(height: 30,),
-    //           StartButton(text: '시작',height: 80,width: mainWidth,)
-    //         ],
-    //       ),
-    //     )
-    //
-    // );
+    double mainWidth = 300.0;
+    double imageContainerHeight = 400.0;
+    double sizedBoxHeight = 100.0;
 
-      return Scaffold(body: Column(
-        children: [
-          Center(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SingleTestWidget(
-                    imagePath: testSelectionControllerRead.testSelectionItemList[0].imagePath,
-                    duration: '12min',
-                    title: '건강나이 테스트',
-                    questionCount: '10',
-                    boxHeight: 140,
-                    boxWidth: 320,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => QuestionScreen()),
-                      );
-                    },
-                  )
-                ],
-              ),
+    return Scaffold(
+        appBar:
+        AppBar(
+          title: Text(
+          '건강나이 테스트',
+          style: TextStyle(
+            fontWeight: FontWeight.bold, // 볼드 처리
+          ),
+        ),
+          centerTitle: true, // 중앙 정렬
+          elevation: 0.0,
+          toolbarHeight: 50.0,
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(4.0), // 선의 높이 조절
+            child: Divider(
+              color: Colors.grey, // 선의 색상 조절
+              height: 1.0, // 선의 두께 조절
             ),
           ),
-        ],
-      )
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              SingleTestWidget(
+                imagePath: testSelectionControllerRead.testSelectionItemList[0].imagePath,
+                duration: '12min',
+                title: '건강나이 테스트',
+                questionCount: '10',
+                boxHeight: 140,
+                boxWidth: 320,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => QuestionScreen()),
+                  );
+                },
+              ),
+              SizedBox(height: 30,),
+            ],
+          ),
+        )
+
     );
+
     //   Scaffold(
     //   body: ListView.builder(
     //     shrinkWrap: true,
@@ -118,38 +104,6 @@ class StartImageContainer extends StatelessWidget {
               width: 280,
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class StartButton extends StatelessWidget {
-  StartButton({Key? key, required this.width,required this.height, required this.text}) : super(key: key);
-  double width;
-  double height;
-  String text;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => QuestionScreen(),)
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        fixedSize: Size(width, height),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20), // 둥글게 만들기 위한 BorderRadius 설정
-        ),
-        elevation: 5, // 그림자 높이
-        shadowColor: Colors.grey.withOpacity(0.5), // 그림자 색상 설정
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 20),
         ),
       ),
     );
