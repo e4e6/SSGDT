@@ -11,6 +11,11 @@ class QuestionController with ChangeNotifier{
   int questionBundleListIndex = 0;
 
   List<QuestionBundleItem> questionBundleList = QuestionModel().healthAgeQuestionBundleList;
+  void ChangeQuestionBundleListandIndexToInitialState(){
+    questionBundleList = QuestionModel().healthAgeQuestionBundleList;
+    questionBundleListIndex = 0;
+    notifyListeners();
+  }
 
   void changeAllQuestionCheckboxValueToFalse({required int questionBundleListIndex, required int questionIndex}) {
     final questionBundle = questionBundleList[questionBundleListIndex];
@@ -62,12 +67,6 @@ class QuestionController with ChangeNotifier{
     questionBundleListIndex >0
         ? questionBundleListIndex --
         : questionBundleListIndex = 0;
-    notifyListeners();
-  }
-
-  void ChangeQuestionBundleListandIndexToInitialState(){
-    questionBundleList = QuestionModel().healthAgeQuestionBundleList;
-    questionBundleListIndex = 0;
     notifyListeners();
   }
 
