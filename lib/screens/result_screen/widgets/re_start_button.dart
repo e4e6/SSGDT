@@ -23,10 +23,10 @@ class ReStartButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         fixedSize: Size(width, height),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20), // 둥글게 만들기 위한 BorderRadius 설정
+          borderRadius: BorderRadius.circular(20),
         ),
-        elevation: 5, // 그림자 높이
-        shadowColor: Colors.grey.withOpacity(0.5), // 그림자 색상 설정
+        elevation: 5,
+        shadowColor: Colors.grey.withOpacity(0.5),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),

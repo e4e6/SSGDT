@@ -21,16 +21,12 @@ class QuestionController with ChangeNotifier{
     final questionBundle = questionBundleList[questionBundleListIndex];
     final question = questionBundle.questionList[questionIndex];
 
-    // Toggle the checked state of the clicked checkbox
     final newQuestion = question.copyWith(isChecked: !question.isChecked);
 
-    // Create a new list of questions with all checkboxes unchecked except the clicked one
     final updatedQuestionList = List<QuestionItem>.from(questionBundle.questionList).map((item) {
       return item.copyWith(isChecked: false);
     }).toList();
 
-
-    // Update the question bundle with the updated question list
     final newQuestionBundle = questionBundle.copyWith(questionList: updatedQuestionList);
     questionBundleList[questionBundleListIndex] = newQuestionBundle;
 

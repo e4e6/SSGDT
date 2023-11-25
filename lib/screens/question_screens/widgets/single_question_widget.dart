@@ -35,7 +35,6 @@ class SingleQuestionWidget extends StatelessWidget {
             child: RichText(
               overflow: TextOverflow.ellipsis,
               maxLines: 5,
-              // strutStyle: StrutStyle(fontSize: 16.0),
               text: TextSpan(
                   text: questionItem.questionText,
                   style: TextStyle(color: Colors.black, fontSize: 16.0)),

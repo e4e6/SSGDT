@@ -28,17 +28,17 @@ class _TestSelectionScreenState extends State<TestSelectionScreen> {
           title: Text(
           '건강나이 테스트',
           style: TextStyle(
-            fontWeight: FontWeight.bold, // 볼드 처리
+            fontWeight: FontWeight.bold,
           ),
         ),
-          centerTitle: true, // 중앙 정렬
+          centerTitle: true,
           elevation: 0.0,
           toolbarHeight: 50.0,
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(4.0), // 선의 높이 조절
+            preferredSize: Size.fromHeight(4.0),
             child: Divider(
-              color: Colors.grey, // 선의 색상 조절
-              height: 1.0, // 선의 두께 조절
+              color: Colors.grey,
+              height: 1.0,
             ),
           ),
         ),

@@ -30,13 +30,13 @@ class SingleTestWidget extends StatelessWidget {
         height: boxHeight,
         decoration: BoxDecoration(
           border: Border.all(color: Colors.black, width: 1),
-          borderRadius: BorderRadius.circular(boxHeight / 10), // 박스의 모서리를 둥글게 처리
-          color: Colors.grey[200], // 박스의 배경색
+          borderRadius: BorderRadius.circular(boxHeight / 10),
+          color: Colors.grey[200],
         ),
         child: Row(
           children: [
             Container(
-              width: boxWidth * 1/3, // 왼쪽 이미지 공간의 가로 길이
+              width: boxWidth * 1/3,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(boxHeight / 10),
@@ -48,14 +48,13 @@ class SingleTestWidget extends StatelessWidget {
               ),
             ),
 
-            SizedBox(width: 10), // 이미지와 텍스트 사이의 간격
+            SizedBox(width: 10),
 
             Container(
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     title,
