@@ -90,6 +90,9 @@ flutter:
   assets:
     - assets/json/
     - assets/image/
+    - assets/image/health_age_test/
+    - assets/image/health_age_test/questions/
+    - assets/image/health_age_test/results/
     - shorebird.yaml
 
   # The following line ensures that the Material Icons font is

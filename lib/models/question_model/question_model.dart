@@ -5,7 +5,7 @@ class QuestionModel{
   List<QuestionBundleItem> healthAgeQuestionBundleList = [
     QuestionBundleItem(
       questionTitle: '식생활',
-      imagePath: 'assets/image/diet.png',
+      imagePath: 'assets/image/health_age_test/questions/diet.png',
       isMultipleSelectionsAllowed: true,
       initialScore: 4,
       questionList: [
@@ -39,7 +39,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '운동',
-      imagePath: 'assets/image/exercise.png',
+      imagePath: 'assets/image/health_age_test/questions/exercise.png',
       questionList: [
         QuestionItem(
           questionText: '일주일에 3회 이상, 한 번에 30분 이상 운동한다.',
@@ -57,7 +57,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '흡연',
-      imagePath: 'assets/image/smoking.png',
+      imagePath: 'assets/image/health_age_test/questions/smoking.png',
       questionList: [
         QuestionItem(
           questionText: '전혀 피운 적이 없거나 10년 전에 끊었다.',
@@ -83,7 +83,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '음주',
-      imagePath: 'assets/image/alcohol_consumption.png',
+      imagePath: 'assets/image/health_age_test/questions/alcohol_consumption.png',
       questionList: [
         QuestionItem(
           questionText: '전혀 마시지 않는다.',
@@ -109,7 +109,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '스트레스',
-      imagePath: 'assets/image/stress.png',
+      imagePath: 'assets/image/health_age_test/questions/stress.png',
       isMultipleSelectionsAllowed: true,
       initialScore: -2,
       questionList: [
@@ -147,7 +147,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '연간 여행거리 / 위험한 직업',
-      imagePath: 'assets/image/annual_travel_distance_risky_jobs.png',
+      imagePath: 'assets/image/health_age_test/questions/annual_travel_distance_risky_jobs.png',
       questionList: [
         QuestionItem(
           questionText:
@@ -168,7 +168,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '운전 및 안전습관',
-      imagePath: 'assets/image/driving_safety_habits.png',
+      imagePath: 'assets/image/health_age_test/questions/driving_safety_habits.png',
       questionList: [
         QuestionItem(
           questionText:
@@ -189,7 +189,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '건강검진',
-      imagePath: 'assets/image/health_checkup.png',
+      imagePath: 'assets/image/health_age_test/questions/health_checkup.png',
       questionList: [
         QuestionItem(
           questionText: '5년에 1회 이상 건강검진을 받는다.',
@@ -207,7 +207,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: 'B형 간염 바이러스 보균자', //일부로 이렇게 적음 (보유자->보균자) 인터넷 찾아봤더니 비슷한 건강설문에서 보균자로 표기하지 않아서 헷갈리는 사례가 꽤 있었음
-      imagePath: 'assets/image/hepatitis_b_virus_carrier.png',
+      imagePath: 'assets/image/health_age_test/questions/hepatitis_b_virus_carrier.png',
       questionList: [
         QuestionItem(
           questionText: '그렇다.',
@@ -225,7 +225,7 @@ class QuestionModel{
     ),
     QuestionBundleItem(
       questionTitle: '비만도',
-      imagePath: 'assets/image/obesity.png',
+      imagePath: 'assets/image/health_age_test/questions/obesity.png',
       questionList: [
         QuestionItem(
           questionText: '표준체중(이상 체중의 90~110%).',
