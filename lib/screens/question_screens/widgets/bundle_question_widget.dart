@@ -44,13 +44,31 @@ class _BundleQuestionWidgetState extends State<BundleQuestionWidget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(questionBundleItem.questionTitle,
-                      style: TextStyle(fontSize: 20)),
-                  Text(questionBundleItem.isMultipleSelectionsAllowed == true
-                      ? '(복수선택)' : '',
-                      style: TextStyle(fontSize: 20)),
+                  Expanded(
+                    child: RichText(
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                      // strutStyle: StrutStyle(fontSize: 16.0),
+                      text: TextSpan(
+                        text: questionBundleItem.isMultipleSelectionsAllowed ? '${questionBundleItem.questionTitle}(복수선택)' : questionBundleItem.questionTitle,
+                        style: TextStyle(color: Colors.black, fontSize: 20.0),
+                      ),
+
+
+                    ),
+                  ),
                 ],
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.start,
+              //   children: [
+              //     Text(questionBundleItem.questionTitle,
+              //         style: TextStyle(fontSize: 20)),
+              //     Text(questionBundleItem.isMultipleSelectionsAllowed == true
+              //         ? '(복수선택)' : '',
+              //         style: TextStyle(fontSize: 20)),
+              //   ],
+              // ),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: questionBundleItem.questionList.length,
